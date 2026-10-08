@@ -1,0 +1,7 @@
+# Godot 캐시
+.godot/
+*.tmp
+
+# 재배포 금지 에셋: itch.io "387 Pixel RPG Fantasy Portrait Vol.1" (assets/CREDITS.md 참고).
+# 로컬에서 예전 저장 파일용으로만 쓰고 저장소에는 올리지 않는다.
+assets/sprites/portraits/

@@ -1,0 +1,39 @@
+{
+  "_comment": "술집 이벤트 [가안]. 술집 행동을 할 때 조건이 맞으면 일반 결과 대신(추가로) 나온다. weight가 클수록 자주.",
+  "rows": [
+    {
+      "id": "ev_tavern_dice", "trigger": "on_action", "action": "tavern", "weight": 2,
+      "conditions": [{"type": "random", "chance": 0.25}, {"type": "gold", "op": ">=", "value": 20}],
+      "scenes": [
+        {"speaker": "here", "text_key": "EV_DICE_1"},
+        {"choice": [
+          {"text_key": "EV_DICE_BET", "effects": [{"type": "chance", "chance": 0.45, "win_key": "EV_DICE_WIN", "lose_key": "EV_DICE_LOSE", "win": [{"type": "gold", "delta": 30}], "lose": [{"type": "gold", "delta": -20}]}]},
+          {"text_key": "EV_DICE_PASS", "effects": []}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_tavern_old_merc", "trigger": "on_action", "action": "tavern", "weight": 1,
+      "conditions": [{"type": "random", "chance": 0.2}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_OLDMERC_1"},
+        {"speaker": "random_free", "text_key": "EV_OLDMERC_2"},
+        {"choice": [
+          {"text_key": "EV_OLDMERC_BUY", "conditions": [{"type": "gold", "op": ">=", "value": 10}], "effects": [{"type": "gold", "delta": -10}, {"type": "affinity", "target": "random_free", "delta": 10}, {"type": "fame", "delta": 1}]},
+          {"text_key": "EV_OLDMERC_LISTEN", "effects": [{"type": "exp", "stat": "lead", "amount": 15}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_tavern_recruiter", "trigger": "on_action", "action": "tavern", "weight": 1,
+      "conditions": [{"type": "random", "chance": 0.15}, {"type": "is_vassal", "value": false}, {"type": "rank_order", "op": ">=", "value": 2}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_RECRUITER_1"},
+        {"choice": [
+          {"text_key": "EV_RECRUITER_LISTEN", "effects": [{"type": "reputation", "nation": "here", "delta": 3}]},
+          {"text_key": "EV_RECRUITER_IGNORE", "effects": [{"type": "text", "key": "EV_RECRUITER_IGNORED"}]}
+        ]}
+      ]
+    }
+  ]
+}

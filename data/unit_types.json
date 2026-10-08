@@ -1,0 +1,10 @@
+{
+  "_comment": "병종 [가안] GDD §8.2. attack_stat: melee=무력, ranged=(무력+통솔)/2, magic=마력. counters: 상대 병종 → 피해 배율.",
+  "rows": [
+    {"id": "infantry", "name_key": "UNIT_INFANTRY", "move": 3, "range_min": 1, "range_max": 1, "attack_stat": "melee",  "counters": {"cavalry": 1.3, "archer": 0.8}},
+    {"id": "cavalry",  "name_key": "UNIT_CAVALRY",  "move": 5, "range_min": 1, "range_max": 1, "attack_stat": "melee",  "counters": {"archer": 1.3, "infantry": 0.8}},
+    {"id": "archer",   "name_key": "UNIT_ARCHER",   "move": 3, "range_min": 2, "range_max": 3, "attack_stat": "ranged", "counters": {"infantry": 1.3, "cavalry": 0.8}},
+    {"id": "mage",     "name_key": "UNIT_MAGE",     "move": 3, "range_min": 1, "range_max": 2, "attack_stat": "magic",  "counters": {}, "fixed_damage": true},
+    {"id": "siege",    "name_key": "UNIT_SIEGE",    "move": 2, "range_min": 1, "range_max": 3, "attack_stat": "ranged", "counters": {}, "structure_mult": 3.0}
+  ]
+}

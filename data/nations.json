@@ -1,0 +1,10 @@
+{
+  "_comment": "5개국 [가안]. 이름은 strings.csv의 name_key로 표시. hire_rate = 용병 고용 성향(0~1), aggression = 매월 공격에 나설 확률(0~1).",
+  "rows": [
+    {"id": "leonhart", "name_key": "NATION_LEONHART", "color": "#c8a040", "main_units": ["cavalry", "infantry"], "races": ["human"], "hire_rate": 0.4, "aggression": 0.35, "sprite_id": "flag_leonhart"},
+    {"id": "merka", "name_key": "NATION_MERKA", "color": "#3c8ccc", "main_units": ["archer"], "races": ["human", "elf", "dwarf", "beastkin", "halfling"], "hire_rate": 0.9, "aggression": 0.35, "sprite_id": "flag_merka"},
+    {"id": "astra", "name_key": "NATION_ASTRA", "color": "#8a5cc8", "main_units": ["mage"], "races": ["human", "elf"], "hire_rate": 0.8, "aggression": 0.4, "sprite_id": "flag_astra"},
+    {"id": "bargum", "name_key": "NATION_BARGUM", "color": "#a05a3c", "main_units": ["infantry", "siege"], "races": ["dwarf", "human"], "hire_rate": 0.2, "aggression": 0.2, "sprite_id": "flag_bargum"},
+    {"id": "silvaen", "name_key": "NATION_SILVAEN", "color": "#4ca05a", "main_units": ["archer", "infantry"], "races": ["elf", "beastkin"], "hire_rate": 0.5, "aggression": 0.25, "sprite_id": "flag_silvaen"}
+  ]
+}

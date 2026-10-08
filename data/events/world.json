@@ -1,0 +1,50 @@
+{
+  "_comment": "계절·세상 이벤트 [가안]. 매월 초에 판정. season: 0 봄 1 여름 2 가을 3 겨울.",
+  "rows": [
+    {
+      "id": "ev_quarterly_report", "trigger": "month_start", "weight": 2,
+      "conditions": [{"type": "is_vassal", "value": true}, {"type": "random", "chance": 0.2}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_REPORT_1"},
+        {"speaker": "narrator", "text_key": "EV_REPORT_2"},
+        {"choice": [
+          {"text_key": "EV_REPORT_NOD", "effects": [{"type": "merit", "delta": 2}]},
+          {"text_key": "EV_REPORT_OBJECT", "effects": [{"type": "merit", "delta": -2}, {"type": "fame", "delta": 2}, {"type": "text", "key": "EV_REPORT_OBJECTED"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_winter_march", "trigger": "month_start", "weight": 1,
+      "conditions": [{"type": "season", "value": 3}, {"type": "random", "chance": 0.3}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_WINTER_1"},
+        {"choice": [
+          {"text_key": "EV_WINTER_BUY", "conditions": [{"type": "gold", "op": ">=", "value": 20}], "effects": [{"type": "gold", "delta": -20}, {"type": "text", "key": "EV_WINTER_WARM"}]},
+          {"text_key": "EV_WINTER_ENDURE", "effects": [{"type": "energy", "delta": -20}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_harvest_festival", "trigger": "month_start", "weight": 2,
+      "conditions": [{"type": "month", "op": "==", "value": 9}, {"type": "random", "chance": 0.6}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_HARVEST_1"},
+        {"choice": [
+          {"text_key": "EV_HARVEST_JOIN", "conditions": [{"type": "gold", "op": ">=", "value": 10}], "effects": [{"type": "gold", "delta": -10}, {"type": "energy", "delta": 30}, {"type": "exp", "stat": "cha", "amount": 20}]},
+          {"text_key": "EV_HARVEST_WORK", "effects": [{"type": "gold", "delta": 40}, {"type": "text", "key": "EV_HARVEST_WORKED"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_refugees", "trigger": "month_start", "weight": 1,
+      "conditions": [{"type": "at_war_here", "value": true}, {"type": "random", "chance": 0.15}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_REFUGEE_1"},
+        {"choice": [
+          {"text_key": "EV_REFUGEE_GIVE", "conditions": [{"type": "gold", "op": ">=", "value": 30}], "effects": [{"type": "gold", "delta": -30}, {"type": "fame", "delta": 3}, {"type": "reputation", "nation": "here", "delta": 2}]},
+          {"text_key": "EV_REFUGEE_PASS", "effects": [{"type": "text", "key": "EV_REFUGEE_PASSED"}]}
+        ]}
+      ]
+    }
+  ]
+}

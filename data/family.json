@@ -1,0 +1,43 @@
+{
+  "_comment": "M7 가족·노화·승계 [가안] GDD §4.4, §5, §5.1, §5.2. 수치는 전부 여기서.",
+  "aging": {
+    "_comment": "매년 1월 나이 +1 뒤 사망 판정. 수명의 start_ratio부터 확률이 생겨, 수명에 이르면 at_lifespan, 그 뒤로 매년 per_year_over씩 더 오른다(최대 max).",
+    "start_ratio": 0.85,
+    "start_chance": 0.03,
+    "at_lifespan": 0.35,
+    "per_year_over": 0.1,
+    "max": 0.9
+  },
+  "romance": {
+    "_comment": "고백: 친밀도 confess_affinity 이상, 미혼 성인끼리. 성공률 = 친밀도 × confess_per_affinity. 청혼: 연인 + 친밀도 propose_affinity 이상이면 반드시 성공.",
+    "confess_affinity": 70,
+    "confess_per_affinity": 0.01,
+    "confess_fail_affinity": -5,
+    "propose_affinity": 80,
+    "propose_cost": 100
+  },
+  "sworn": {
+    "_comment": "맹우(의형제): 친밀도 sworn_affinity 이상이면 맹세할 수 있다. 승계 후보가 된다.",
+    "sworn_affinity": 90
+  },
+  "children": {
+    "_comment": "결혼한 부부는 매년 1월 출산 판정: 두 종족 출산율 중 낮은 쪽. 둘 다 같은 도시에 살아야 하고, 둘 다 수명의 max_parent_age_ratio 미만. require_opposite_gender: true면 성별이 다른 부부만 (기획 확정 2026-10-08: 같은 성별 부부는 자녀 없음). 자녀 능력 = 부모 평균 × parent_weight + 무작위(base_min~base_max) × (1 - parent_weight) + 종족 보정. 특기는 부모 특기마다 skill_chance.",
+    "max_parent_age_ratio": 0.6,
+    "require_opposite_gender": true,
+    "npc_marriage_chance": 0.04,
+    "_npc": "매년 1월, 미혼 성인 NPC 무장마다 npc_marriage_chance 확률로 같은 도시의 미혼 성인과 혼인 (세대교체용)",
+    "parent_weight": 0.5,
+    "base_min": 20,
+    "base_max": 60,
+    "potential_bonus_min": 10,
+    "potential_bonus_max": 30,
+    "skill_chance": 0.2
+  },
+  "death": {
+    "_comment": "전투에서 부대가 궤멸한 주인공의 사망 확률 (GDD §5: 기본 10%). 사망하면 승계: 성인 자녀 → 배우자 → 맹우. 없으면 게임 오버. 후계자는 금 전부·명성 fame_inherit 비율·동료·고용 부대·용병단을 물려받는다.",
+    "player_battle_death": 0.1,
+    "player_death_requires_heir": true,
+    "_heir_guard": "true면 후계자가 없는 주인공은 전투에서 죽지 않고 부상만 입는다 (초반 즉사 게임 오버 방지, 기획 확정 2026-10-08: 유지). false면 GDD대로 언제나 10%.",
+    "fame_inherit": 0.5
+  }
+}

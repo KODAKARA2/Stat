@@ -1,0 +1,40 @@
+{
+  "_comment": "인물·방문 이벤트 [가안].",
+  "rows": [
+    {
+      "id": "ev_dark_elf_misread", "trigger": "on_action", "action": "visit", "weight": 2,
+      "conditions": [{"type": "variant", "value": "dark_elf"}, {"type": "random", "chance": 0.35}],
+      "scenes": [
+        {"speaker": "here", "text_key": "EV_DE_MISREAD_1"},
+        {"speaker": "player", "text_key": "EV_DE_MISREAD_2"},
+        {"choice": [
+          {"text_key": "EV_DE_LAUGH", "effects": [{"type": "affinity", "target": "here", "delta": 5}, {"type": "exp", "stat": "cha", "amount": 15}]},
+          {"text_key": "EV_DE_EXPLAIN", "effects": [{"type": "exp", "stat": "int", "amount": 15}, {"type": "text", "key": "EV_DE_EXPLAINED"}]},
+          {"text_key": "EV_DE_GLARE", "effects": [{"type": "affinity", "target": "here", "delta": -5}, {"type": "fame", "delta": 1}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_wanderer_asks", "trigger": "month_start", "weight": 1,
+      "conditions": [{"type": "random", "chance": 0.12}, {"type": "rank_order", "op": ">=", "value": 1}],
+      "scenes": [
+        {"speaker": "new_wanderer", "text_key": "EV_WANDERER_1"},
+        {"choice": [
+          {"text_key": "EV_WANDERER_YES", "effects": [{"type": "add_companion", "target": "new_wanderer"}]},
+          {"text_key": "EV_WANDERER_NO", "effects": [{"type": "text", "key": "EV_WANDERER_LEFT"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_payday_quarrel", "trigger": "month_start", "weight": 1,
+      "conditions": [{"type": "random", "chance": 0.1}, {"type": "companions", "op": ">=", "value": 2}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_PAYDAY_1"},
+        {"choice": [
+          {"text_key": "EV_PAYDAY_PAY", "conditions": [{"type": "gold", "op": ">=", "value": 30}], "effects": [{"type": "gold", "delta": -30}, {"type": "text", "key": "EV_PAYDAY_PAID"}]},
+          {"text_key": "EV_PAYDAY_SPEECH", "effects": [{"type": "exp", "stat": "cha", "amount": 20}, {"type": "text", "key": "EV_PAYDAY_SPOKE"}]}
+        ]}
+      ]
+    }
+  ]
+}

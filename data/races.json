@@ -1,0 +1,10 @@
+{
+  "_comment": "종족 [가안] GDD §4.4. stat_mod는 기본 능력치에 더한 뒤 1~100으로 자름. fertility = 연간 출산 판정 기본 확률.",
+  "rows": [
+    {"id": "human", "name_key": "RACE_HUMAN", "stat_mod": {}, "lifespan": 70, "adult_age": 16, "fertility": 0.30, "traits": ["exp_bonus_10"], "start_age": 18},
+    {"id": "elf", "name_key": "RACE_ELF", "stat_mod": {"int": 5, "mag": 8, "str": -5}, "lifespan": 600, "adult_age": 50, "fertility": 0.03, "traits": ["forest_bonus"], "variants": [{"id": "dark_elf", "name_key": "RACE_ELF_DARK"}], "start_age": 62},
+    {"id": "dwarf", "name_key": "RACE_DWARF", "stat_mod": {"lead": 5, "str": 5, "cha": -5}, "lifespan": 250, "adult_age": 30, "fertility": 0.10, "traits": ["siege_defense_bonus", "move_minus_1"], "start_age": 34},
+    {"id": "beastkin", "name_key": "RACE_BEASTKIN", "stat_mod": {"str": 8, "int": -5}, "lifespan": 50, "adult_age": 12, "fertility": 0.30, "traits": ["move_plus_1", "night_bonus"], "start_age": 15},
+    {"id": "halfling", "name_key": "RACE_HALFLING", "stat_mod": {"cha": 5, "int": 3, "str": -8}, "lifespan": 100, "adult_age": 20, "fertility": 0.18, "traits": ["scout_bonus", "shop_discount"], "start_age": 22}
+  ]
+}

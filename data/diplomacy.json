@@ -1,0 +1,13 @@
+{
+  "_comment": "시작 시점 국가 관계 [가안]. status: war(전쟁) / truce(휴전, months개월). 적히지 않은 쌍은 휴전 6개월로 시작. 수십 년째 이어진 전쟁이라는 설정.",
+  "rows": [
+    {"a": "leonhart", "b": "astra",   "status": "war"},
+    {"a": "leonhart", "b": "silvaen", "status": "war"},
+    {"a": "bargum",   "b": "silvaen", "status": "war"},
+    {"a": "astra",    "b": "merka",   "status": "war"},
+    {"a": "leonhart", "b": "bargum",  "status": "truce", "months": 8},
+    {"a": "leonhart", "b": "merka",   "status": "truce", "months": 10},
+    {"a": "bargum",   "b": "astra",   "status": "truce", "months": 6},
+    {"a": "silvaen",  "b": "merka",   "status": "truce", "months": 12}
+  ]
+}

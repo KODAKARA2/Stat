@@ -1,0 +1,22 @@
+{
+  "_comment": "특기 [가안] GDD §4.3, §8.3 전법. battle이 있는 특기만 전투에서 쓴다. sp = 기력 소모. target: enemy(적 1), area(칸 중심 십자 범위), ally(아군 1), self(자신). power = 피해 배율. range = 사거리(맨해튼 거리). levels = 전법 레벨 2·3에서 battle 값을 덮어쓰는 것 (radius = 범위, self·ally에 radius가 있으면 주변 아군까지).",
+  "rows": [
+    {"id": "charge",    "name_key": "SKILL_CHARGE",    "desc_key": "SKILL_CHARGE_DESC", "key_stat": "str",
+     "battle": {"sp": 25, "target": "enemy", "range_min": 1, "range_max": 1, "power": 1.6, "attack": "melee", "no_counter": true},
+     "levels": [{}, {"power": 1.85}, {"power": 2.1, "range_max": 2}]},
+    {"id": "volley",    "name_key": "SKILL_VOLLEY",    "desc_key": "SKILL_VOLLEY_DESC", "key_stat": "lead",
+     "battle": {"sp": 30, "target": "area", "range_min": 2, "range_max": 4, "power": 0.7, "attack": "ranged", "radius": 1},
+     "levels": [{}, {"power": 0.85, "range_max": 5}, {"power": 0.9, "range_max": 5, "radius": 2}]},
+    {"id": "fire",      "name_key": "SKILL_FIRE",      "desc_key": "SKILL_FIRE_DESC", "key_stat": "mag",
+     "battle": {"sp": 30, "target": "area", "range_min": 1, "range_max": 3, "power": 0.9, "attack": "magic", "radius": 1, "burns": true},
+     "levels": [{}, {"power": 1.05, "range_max": 4}, {"power": 1.1, "range_max": 4, "radius": 2}]},
+    {"id": "fortify",   "name_key": "SKILL_FORTIFY",   "desc_key": "SKILL_FORTIFY_DESC", "key_stat": "lead",
+     "battle": {"sp": 20, "target": "self", "guard": 0.6},
+     "levels": [{}, {"guard": 0.5}, {"guard": 0.4, "radius": 1}]},
+    {"id": "eloquence", "name_key": "SKILL_ELOQUENCE", "desc_key": "SKILL_ELOQUENCE_DESC"},
+    {"id": "heal",      "name_key": "SKILL_HEAL",      "desc_key": "SKILL_HEAL_DESC", "key_stat": "mag",
+     "battle": {"sp": 25, "target": "ally", "range_min": 0, "range_max": 2, "heal_base": 60, "heal_per_mag": 2.0},
+     "levels": [{}, {"heal_base": 90}, {"heal_base": 120, "radius": 1}]},
+    {"id": "commerce",  "name_key": "SKILL_COMMERCE",  "desc_key": "SKILL_COMMERCE_DESC"}
+  ]
+}

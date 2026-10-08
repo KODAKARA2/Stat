@@ -1,0 +1,14 @@
+{
+  "_comment": "들판 전투 지도 자동 생성 규칙 [가안]. 도시 지형(terrain)별로 칸마다 숲·언덕이 나올 확률, 강이 가로지를 확률. 아군은 아래 spawn_rows줄, 적은 위 spawn_rows줄에 선다.",
+  "spawn_rows": 2,
+  "river_min_row": 3,
+  "river_max_row": 6,
+  "river_fords": 2,
+  "by_city_terrain": {
+    "plains":   {"forest": 0.12, "hill": 0.08, "river_chance": 0.5},
+    "forest":   {"forest": 0.42, "hill": 0.06, "river_chance": 0.35},
+    "mountain": {"forest": 0.10, "hill": 0.40, "river_chance": 0.2},
+    "highland": {"forest": 0.08, "hill": 0.28, "river_chance": 0.25},
+    "port":     {"forest": 0.08, "hill": 0.10, "river_chance": 0.6}
+  }
+}

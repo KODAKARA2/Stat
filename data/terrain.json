@@ -1,0 +1,13 @@
+{
+  "_comment": "전투 지형 [가안] GDD §8.1. move = 들어가는 데 드는 이동력(0 = 못 들어감). defense = 이 칸에 선 부대가 받는 피해 배율(작을수록 단단). ranged_bonus = 원거리 부대 사거리 보너스. color = 임시 그림 색.",
+  "rows": [
+    {"id": "plains", "name_key": "TERRAIN_B_PLAINS", "move": 1, "defense": 1.0,  "ranged_bonus": 0, "color": "#7d9a4e", "sprite_id": "tile_plains"},
+    {"id": "forest", "name_key": "TERRAIN_B_FOREST", "move": 2, "defense": 0.8,  "ranged_bonus": 0, "color": "#3f6b35", "sprite_id": "tile_forest", "burns_to": "burnt"},
+    {"id": "hill",   "name_key": "TERRAIN_B_HILL",   "move": 2, "defense": 0.9,  "ranged_bonus": 1, "color": "#a08a5a", "sprite_id": "tile_hill"},
+    {"id": "river",  "name_key": "TERRAIN_B_RIVER",  "move": 3, "defense": 1.15, "ranged_bonus": 0, "color": "#4a7fb0", "sprite_id": "tile_river"},
+    {"id": "burnt",  "name_key": "TERRAIN_B_BURNT",  "move": 1, "defense": 1.0,  "ranged_bonus": 0, "color": "#5a4a3a", "sprite_id": "tile_burnt"},
+    {"id": "rubble", "name_key": "TERRAIN_B_RUBBLE", "move": 1, "defense": 1.0,  "ranged_bonus": 0, "color": "#6a5a48", "sprite_id": "tile_rubble"},
+    {"id": "wall",   "name_key": "TERRAIN_B_WALL",   "move": 0, "defense": 1.0,  "ranged_bonus": 0, "color": "#6e6a66", "sprite_id": "tile_wall"},
+    {"id": "gate",   "name_key": "TERRAIN_B_GATE",   "move": 0, "defense": 1.0,  "ranged_bonus": 0, "color": "#7a5230", "sprite_id": "tile_gate", "hp": 500}
+  ]
+}

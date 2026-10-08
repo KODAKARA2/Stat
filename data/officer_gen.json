@@ -1,0 +1,22 @@
+{
+  "_comment": "범용 장수 생성·등용 [가안]. 능력치는 stat_min~stat_max 무작위(평균적으로 낮음), spike_chance 확률로 능력 하나가 spike_min~spike_max만큼 더 높다. 잠재치 = 능력 + potential_min~potential_max.",
+  "stat_min": 15,
+  "stat_max": 55,
+  "spike_chance": 0.3,
+  "spike_min": 10,
+  "spike_max": 30,
+  "potential_min": 5,
+  "potential_max": 20,
+  "skill_chance": 0.3,
+  "battle_skills": ["charge", "volley", "fire", "fortify", "heal"],
+  "recruit": {
+    "_comment": "매월 말 나라마다: 무장 수가 목표(도시 수 × per_city, 최소 min) 아래면 그 나라 도시에 있는 재야를 등용 시도(base_chance + (군주 매력-50) × cha_factor). 실패하면 generic_chance 확률로 범용 장수를 기용. 재야는 매월 wanderer_chance 확률로 새로 나타난다(최대 wanderer_cap명).",
+    "per_city": 2,
+    "min": 4,
+    "base_chance": 0.35,
+    "cha_factor": 0.005,
+    "generic_chance": 0.3,
+    "wanderer_chance": 0.25,
+    "wanderer_cap": 15
+  }
+}

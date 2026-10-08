@@ -1,0 +1,8 @@
+{
+  "_comment": "종족 쌍 초기 친밀도 보정 [가안] GDD §4.4. 순서 무관(a-b = b-a). 적히지 않은 쌍은 0.",
+  "rows": [
+    {"a": "elf", "b": "dwarf", "value": -10},
+    {"a": "human", "b": "halfling", "value": 5},
+    {"a": "beastkin", "b": "elf", "value": -5}
+  ]
+}

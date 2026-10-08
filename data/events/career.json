@@ -1,0 +1,63 @@
+{
+  "_comment": "전투 후·승진 이벤트 [가안].",
+  "rows": [
+    {
+      "id": "ev_battle_loot", "trigger": "after_battle", "weight": 2,
+      "conditions": [{"type": "battle_won", "value": true}, {"type": "random", "chance": 0.25}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_LOOT_1"},
+        {"choice": [
+          {"text_key": "EV_LOOT_KEEP", "effects": [{"type": "gold", "delta": 40}]},
+          {"text_key": "EV_LOOT_SHARE", "effects": [{"type": "fame", "delta": 2}, {"type": "text", "key": "EV_LOOT_SHARED"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_battle_ledger", "trigger": "after_battle", "weight": 1,
+      "conditions": [{"type": "random", "chance": 0.15}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_LEDGER_1"},
+        {"choice": [
+          {"text_key": "EV_LEDGER_REMEMBER", "effects": [{"type": "energy", "delta": -5}, {"type": "exp", "stat": "cha", "amount": 15}, {"type": "text", "key": "EV_LEDGER_REMEMBERED"}]},
+          {"text_key": "EV_LEDGER_SIGN", "effects": [{"type": "text", "key": "EV_LEDGER_SIGNED"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_rank_veteran", "trigger": "rank_change", "once": true,
+      "conditions": [{"type": "context", "key": "rank", "value": "merc_veteran"}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_VETERAN_1"},
+        {"choice": [{"text_key": "EV_OK", "effects": [{"type": "fame", "delta": 1}]}]}
+      ]
+    },
+    {
+      "id": "ev_rank_knight", "trigger": "rank_change", "once": true,
+      "conditions": [{"type": "context", "key": "rank", "value": "vassal_knight"}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_KNIGHT_1"},
+        {"speaker": "player", "text_key": "EV_KNIGHT_2"},
+        {"choice": [
+          {"text_key": "EV_KNIGHT_HONOR", "effects": [{"type": "reputation", "nation": "here", "delta": 3}]},
+          {"text_key": "EV_KNIGHT_SALARY", "effects": [{"type": "gold", "delta": 30}, {"type": "text", "key": "EV_KNIGHT_PAID"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_rank_lord", "trigger": "rank_change", "once": true,
+      "conditions": [{"type": "context", "key": "rank", "value": "lord"}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_LORD_1"},
+        {"choice": [{"text_key": "EV_OK", "effects": [{"type": "fame", "delta": 3}]}]}
+      ]
+    },
+    {
+      "id": "ev_rank_captain", "trigger": "rank_change", "once": true,
+      "conditions": [{"type": "context", "key": "rank", "value": "merc_captain"}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_CAPTAIN_1"},
+        {"choice": [{"text_key": "EV_OK", "effects": [{"type": "fame", "delta": 3}]}]}
+      ]
+    }
+  ]
+}

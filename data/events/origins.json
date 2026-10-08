@@ -1,0 +1,51 @@
+{
+  "_comment": "출신 배경 이벤트 [가안]. 한 번씩만(once).",
+  "rows": [
+    {
+      "id": "ev_bastard_letter", "trigger": "month_start", "once": true, "weight": 3,
+      "conditions": [{"type": "background", "value": "knight_bastard"}, {"type": "year", "op": ">=", "value": 2}, {"type": "officer_alive", "officer": "gabriel"}, {"type": "random", "chance": 0.3}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_BASTARD_1"},
+        {"speaker": "gabriel", "text_key": "EV_BASTARD_2"},
+        {"choice": [
+          {"text_key": "EV_BASTARD_ASK", "effects": [{"type": "affinity", "target": "gabriel", "delta": 10}, {"type": "flag", "value": "bastard_asked"}, {"type": "text", "key": "EV_BASTARD_ASKED"}]},
+          {"text_key": "EV_BASTARD_BURN", "effects": [{"type": "fame", "delta": 2}, {"type": "flag", "value": "bastard_burned"}, {"type": "text", "key": "EV_BASTARD_BURNED"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_merchant_debt", "trigger": "month_start", "once": true, "weight": 3,
+      "conditions": [{"type": "background", "value": "merchant_family"}, {"type": "month", "op": ">=", "value": 6}, {"type": "random", "chance": 0.3}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_DEBT_1"},
+        {"choice": [
+          {"text_key": "EV_DEBT_PAY", "conditions": [{"type": "gold", "op": ">=", "value": 100}], "effects": [{"type": "gold", "delta": -100}, {"type": "reputation", "nation": "merka", "delta": 8}, {"type": "text", "key": "EV_DEBT_PAID"}]},
+          {"text_key": "EV_DEBT_REFUSE", "effects": [{"type": "exp", "stat": "pol", "amount": 20}, {"type": "text", "key": "EV_DEBT_REFUSED"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_mage_rival", "trigger": "on_action", "action": "tavern", "once": true, "weight": 5,
+      "conditions": [{"type": "background", "value": "fallen_mage"}, {"type": "random", "chance": 0.5}],
+      "scenes": [
+        {"speaker": "new_wanderer", "text_key": "EV_RIVAL_1"},
+        {"speaker": "player", "text_key": "EV_RIVAL_2"},
+        {"choice": [
+          {"text_key": "EV_RIVAL_DUEL", "effects": [{"type": "start_duel", "target": "new_wanderer"}]},
+          {"text_key": "EV_RIVAL_LEAVE", "effects": [{"type": "text", "key": "EV_RIVAL_LEFT"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "ev_hunter_tracks", "trigger": "on_action", "action": "move", "once": true, "weight": 3,
+      "conditions": [{"type": "background", "value": "mountain_hunter"}, {"type": "city_terrain", "value": "forest"}, {"type": "random", "chance": 0.5}],
+      "scenes": [
+        {"speaker": "narrator", "text_key": "EV_TRACKS_1"},
+        {"choice": [
+          {"text_key": "EV_TRACKS_FOLLOW", "effects": [{"type": "chance", "chance": 0.6, "win_key": "EV_TRACKS_WIN", "lose_key": "EV_TRACKS_LOSE", "win": [{"type": "gold", "delta": 60}, {"type": "fame", "delta": 2}], "lose": [{"type": "injury", "months": 1}]}]},
+          {"text_key": "EV_TRACKS_IGNORE", "effects": []}
+        ]}
+      ]
+    }
+  ]
+}

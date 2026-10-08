@@ -1,0 +1,952 @@
+keys,ko
+GAME_TITLE,용병의 대륙
+GAME_SUBTITLE,[가안] 전쟁은 세금이다
+BOOT_LOADING,데이터를 불러오는 중...
+BOOT_TABLES,불러온 데이터 표: %d개
+BOOT_ERRORS,데이터 오류: %d건
+BOOT_NO_ERRORS,데이터 오류 없음
+BOOT_FONT_TEST,한글 표시 시험: 가나다라마바사 ㄱㄴㄷ 0123 ABC
+BOOT_NATIONS,5개국
+BOOT_RANKS,신분 사다리
+BOOT_MONSTERS,몬스터 (단계별)
+BOOT_NEXT_MONTH,다음 달로
+BOOT_DATE,%d년 %d월 (%s)
+SEASON_SPRING,봄
+SEASON_SUMMER,여름
+SEASON_AUTUMN,가을
+SEASON_WINTER,겨울
+NATION_LEONHART,레온하트 왕국
+NATION_MERKA,메르카 상업연합
+NATION_ASTRA,아스트라 마도국
+NATION_BARGUM,바르굼 산악왕국
+NATION_SILVAEN,실바엔 숲의 동맹
+RACE_HUMAN,인간
+RACE_ELF,엘프
+RACE_ELF_DARK,다크엘프
+RACE_DWARF,드워프
+RACE_BEASTKIN,수인
+RACE_HALFLING,하플링
+RANK_MERC_ROOKIE,신입 용병
+RANK_MERC_VETERAN,베테랑 용병
+RANK_MERC_SENIOR,상급 용병
+RANK_MERC_VICE,용병단 부장
+RANK_MERC_CAPTAIN,용병대장
+RANK_VASSAL_KNIGHT,고용 기사
+RANK_LORD,성주
+RANK_GENERAL,장군
+RANK_CHANCELLOR,재상
+RANK_RULER,군주
+UNIT_INFANTRY,보병
+UNIT_CAVALRY,기병
+UNIT_ARCHER,궁병
+UNIT_MAGE,마법병
+UNIT_SIEGE,공성병
+MON_GOBLIN,고블린
+MON_GOBLIN_CART,고블린 전차
+MON_KOBOLD,코볼트
+MON_GNOLL,놀
+MON_GNOLL_ARCHER,놀 궁수
+MON_SKELETON,스켈레톤
+MON_GHOUL,구울
+MON_GIANT_BEETLE,거대 딱정벌레
+MON_GIANT_SCORPION,거대 전갈
+MON_TROGLODYTE,트로글로다이트
+MON_HARPY,하피
+MON_HELLHOUND,헬하운드
+MON_GARGOYLE,가고일
+MON_OWLBEAR,아울베어
+MON_OGRE,오우거
+MON_WYVERN,와이번
+MON_MAN_SCORPION,맨스콜피온
+MON_MANTICORE,맨티코어
+MON_CHIMERA,키메라
+MON_DISPLACER_BEAST,디스플레이서 비스트
+MON_NAGPA,나그파
+MON_FLAME_SALAMANDER,플레임 샐러맨더
+MON_FROST_SALAMANDER,프로스트 샐러맨더
+MON_WAR_MACHINE,워 머신
+MON_BEHOLDER,비홀더
+MON_LICH,리치
+MON_GREEN_DRAGON,그린 드래곤
+MON_BLACK_DRAGON,블랙 드래곤
+MON_RED_DRAGON,레드 드래곤
+CITY_BARGUMHEIM,바르굼하임
+CITY_BARGUMHEIM_DESC,산을 통째로 파서 만든 수도. 문이 열린 걸 본 사람이 드물다.
+CITY_KRAGHOLT,크라그홀트
+CITY_KRAGHOLT_DESC,광산 마을. 엘프 국경과 붙어 있어 술집 싸움이 잦다.
+CITY_EISENWALL,아이젠발
+CITY_EISENWALL_DESC,대륙 최고의 대장간 거리. 무기 수출이 국경 분쟁보다 바쁘다.
+CITY_DUNMOR,둔모르
+CITY_DUNMOR_DESC,바르굼에서 유일하게 밀이 자라는 고원. 그래서 늘 노려진다.
+CITY_GRIMSTEIN,그림슈타인
+CITY_GRIMSTEIN_DESC,남쪽을 지키는 요새 도시. 원정은 싫지만 수비는 자신 있다.
+CITY_SILVAENDIEL,실바엔디엘
+CITY_SILVAENDIEL_DESC,거목 위에 지은 수도. 회의 한 번에 십 년이 걸린다.
+CITY_ELARIS,엘라리스
+CITY_ELARIS_DESC,드워프 광산과 맞닿은 숲. 나무를 베러 오는 손님이 많다.
+CITY_MIRWEN,미르웬
+CITY_MIRWEN_DESC,메르카 상인들이 '벌목 계약'이라며 자주 넘어오는 숲.
+CITY_CAERIN,카에린
+CITY_CAERIN_DESC,약초와 꿀로 유명한 숲 마을. 수인 부족이 국경을 지킨다.
+CITY_ROSLIN,로슬린
+CITY_ROSLIN_DESC,실바엔의 유일한 항구. 엘프치고 셈이 빠른 사람들이 산다.
+CITY_ASTRARION,아스트라리온
+CITY_ASTRARION_DESC,탑의 도시. 마법사는 많지만 전선에 나가는 마법사는 없다.
+CITY_SELENE,셀레네
+CITY_SELENE_DESC,천문대가 있는 고원 도시. 별을 보며 전쟁 예산을 짠다.
+CITY_ORBIS,오르비스
+CITY_ORBIS_DESC,마도학원 분교가 있는 도시. 졸업 시험이 곧 국경 경비다.
+CITY_LUMINA,루미나
+CITY_LUMINA_DESC,마석 시장이 서는 도시. 메르카 상인과 밀수꾼이 붐빈다.
+CITY_CALYX,칼릭스
+CITY_CALYX_DESC,아스트라의 항구. 마법 물품이 배에 실려 대륙 밖으로 나간다.
+CITY_LEONGARDE,레온가르드
+CITY_LEONGARDE_DESC,바다를 등진 왕도. 명예를 말하는 연설이 대륙에서 가장 긴 곳.
+CITY_ARDEN,아르덴
+CITY_ARDEN_DESC,왕국 동남쪽 끝의 평원 요새. '명예로운 변경'이라 불리지만 아무도 부임하려 하지 않는다.
+CITY_VALOIS,발루아
+CITY_VALOIS_DESC,끝없는 밀밭. 귀족들의 별장이 많아 출정 명령이 늦게 도착한다.
+CITY_ROCELLE,로셀
+CITY_ROCELLE_DESC,기사 학교가 있는 항구 도시. 졸업생 절반은 용병 길드로 간다.
+CITY_BRIENNE,브리엔
+CITY_BRIENNE_DESC,왕국 서남쪽 항구. 용병 계약서가 밀보다 많이 오간다.
+CITY_PORTAMERKA,포르타메르카
+CITY_PORTAMERKA_DESC,대륙 한가운데의 교역 수도이자 용병 길드 본부. 전쟁은 여기서 거래된다.
+CITY_SALVIA,살비아
+CITY_SALVIA_DESC,향신료 농장과 대상인의 저택이 늘어선 도시. 숲의 이웃과는 사이가 애매하다.
+CITY_CORALE,코랄레
+CITY_CORALE_DESC,산호와 마석이 같은 저울에 오르는 거래소 도시. 세관원이 장군보다 높다.
+CITY_VEROTO,베로토
+CITY_VEROTO_DESC,남쪽 왕국으로 가는 관문. 레온하트산 군마와 메르카 금화가 오간다.
+CITY_RIVAR,리바르
+CITY_RIVAR_DESC,세 나라와 국경을 맞댄 시장 도시. 무엇이든 팔고 누구에게든 판다. 그래서 주인이 자주 바뀐다.
+TERRAIN_PLAINS,평원
+TERRAIN_FOREST,숲
+TERRAIN_MOUNTAIN,산
+TERRAIN_PORT,항구
+TERRAIN_HIGHLAND,고원
+CITY_CAPITAL,수도
+STAT_POPULATION,인구
+STAT_GOLD,금
+STAT_FOOD,식량
+STAT_TROOPS,병력
+STAT_SECURITY,치안
+STAT_COMMERCE,상업
+STAT_AGRICULTURE,농업
+STAT_DEFENSE,방어
+CITY_NEIGHBORS,인접
+MAP_TAP_HINT,도시를 눌러 정보를 확인하세요
+TAB_MAP,지도
+TAB_CITY,도시
+TAB_PEOPLE,인물
+TAB_COMPANY,용병단
+TAB_MENU,메뉴
+TAB_NOT_YET,아직 준비 중입니다
+BOOT_BACK_TO_MAP,지도로 돌아가기
+RANK_NONE,재야
+NATION_NONE,무소속
+STAT_LEAD,통솔
+STAT_STR,무력
+STAT_INT,지력
+STAT_MAG,마력
+STAT_POL,정치
+STAT_CHA,매력
+GENDER_M,남
+GENDER_F,여
+TRAIT_EXP_BONUS_10,경험치 +10%
+TRAIT_FOREST_BONUS,숲 지형 보너스
+TRAIT_SIEGE_DEFENSE_BONUS,공성·방어 보너스
+TRAIT_MOVE_MINUS_1,이동력 -1
+TRAIT_MOVE_PLUS_1,이동력 +1
+TRAIT_NIGHT_BONUS,야간 전투 보너스
+TRAIT_SCOUT_BONUS,정찰·잠입 보너스
+TRAIT_SHOP_DISCOUNT,상점 할인
+BG_KNIGHT_BASTARD,기사의 사생아
+BG_KNIGHT_BASTARD_DESC,아버지가 누군지는 다들 짐작만 한다. 검은 일찍 배웠다.
+BG_MERCHANT_FAMILY,상인 집안
+BG_MERCHANT_FAMILY_DESC,잘사는 상인 집안의 셋째. 물려받을 가게는 없지만 셈은 빠르다.
+BG_FALLEN_MAGE,몰락 마법사
+BG_FALLEN_MAGE_DESC,학원에서 쫓겨난 이유는 말하고 싶지 않다. 불꽃 하나는 확실히 다룬다.
+BG_MOUNTAIN_HUNTER,산골 사냥꾼
+BG_MOUNTAIN_HUNTER_DESC,산에서 활과 덫으로 먹고살았다. 사람 상대는 처음이다.
+SKILL_CHARGE,돌격
+SKILL_CHARGE_DESC,적진을 꿰뚫는 돌진 공격
+SKILL_VOLLEY,일제사격
+SKILL_VOLLEY_DESC,넓은 범위에 화살을 퍼붓는다
+SKILL_FIRE,화염술
+SKILL_FIRE_DESC,불꽃으로 적과 지형을 태운다
+SKILL_FORTIFY,축성
+SKILL_FORTIFY_DESC,성벽과 진지를 튼튼히 한다
+SKILL_ELOQUENCE,언변
+SKILL_ELOQUENCE_DESC,말로 사람을 움직인다
+SKILL_HEAL,치료
+SKILL_HEAL_DESC,다친 병사를 돌본다
+SKILL_COMMERCE,상재
+SKILL_COMMERCE_DESC,돈 냄새를 잘 맡는다
+OFC_LEOPOLD,레오폴드 3세
+OFC_GABRIEL,가브리엘 드 발루아
+OFC_ISABELLE,이자벨 로셀
+OFC_HUGUES,위그 브리엔
+OFC_MARTIN,마르탱
+OFC_ENRICO,엔리코 살바토레
+OFC_LUCIA,루치아 코랄레
+OFC_TORVI,토르비
+OFC_NINA,니나
+OFC_PAOLO,파올로 리바르
+OFC_CELESTINE,셀레스틴
+OFC_AURELIA,아우렐리아
+OFC_CASSIAN,카시안
+OFC_EIRIN,에이린
+OFC_MARCUS,마르쿠스
+OFC_BRON,브론 2세
+OFC_HAGRIDA,하그리다
+OFC_OSCAR,오스카 둔모르
+OFC_GUMNIR,굼니르
+OFC_FELIX,펠릭스
+OFC_AERIEN,아에리엔
+OFC_RIAN,리안
+OFC_NAILA,나일라
+OFC_THEO,테오 로슬린
+OFC_SYLPHIE,실피
+OFC_BARTO,바르토
+OFC_KIKI,키키
+OFC_ROWGAN,로우간
+OFC_MIRABEL,미라벨
+OFC_DRUN,드룬
+UI_CLOSE,닫기
+UI_AP_COST,(행동력 %d)
+HUD_STATUS,행동력 %s   기력 %d   금 %s
+MAP_OPEN_CITY,이 도시에서 행동하기
+MAP_FAR_AWAY,멀리 있음 (%d번 이동)
+ACTION_MOVE,이동
+ACTION_TRAIN,수행
+ACTION_REST,휴식
+ACTION_VISIT,방문
+ACTION_INTERACT_SHORT,교류
+CITY_MY_ACTIONS,내 행동
+CITY_PEOPLE_HERE,이 도시의 인물 (%d명)
+CITY_NOBODY,아무도 없다.
+CITY_LOG,최근 일
+PEOPLE_YOU,(나)
+PEOPLE_AFFINITY,친밀도 %d
+PEOPLE_STRANGER,모르는 사이
+PEOPLE_KNOWN,아는 사람 (%d명)
+PEOPLE_OTHERS,그 밖의 인물 (%d명)
+CARD_RACE_AGE,%s · %d세
+CARD_LOCATION,현재 위치: %s
+CARD_PLAYER_STATUS,행동력 %d/%d · 기력 %d · 금 %s · 명성 %d
+CARD_CAPPED,(한계)
+CARD_POTENTIAL,잠재치:
+CARD_SKILLS,특기:
+CARD_NO_SKILL,없음
+ACT_FAIL_NO_ACTOR,행동할 수 없는 상태다.
+ACT_FAIL_NO_AP,이번 달 행동력을 다 썼다.
+ACT_FAIL_SAME_CITY,이미 이 도시에 있다.
+ACT_FAIL_NOT_ADJACENT,길이 이어진 이웃 도시로만 갈 수 있다.
+ACT_FAIL_NO_TARGET,만날 상대가 없다.
+ACT_FAIL_NOT_HERE,그 사람은 이 도시에 없다.
+ACT_FAIL_NO_GOLD,금이 모자란다.
+ACT_FAIL_NO_STAT,능력을 골라야 한다.
+ACT_FAIL_TIRED,너무 지쳤다. 먼저 쉬자.
+ACT_FAIL_CAPPED,이 능력은 더 오르지 않는다.
+ACT_FAIL_UNKNOWN,알 수 없는 행동.
+ACT_MOVE_DONE,%s(으)로 이동했다.
+ACT_AFFINITY_UP,%s와(과)의 친밀도 +%d (현재 %d)
+ACT_GOLD_SPENT,금 %d을(를) 썼다.
+ACT_TRAIN_EXP,%s 수행: 경험치 +%d (%d/%d)
+ACT_TRAIN_UP,%s이(가) 올랐다! %d → %d
+ACT_TRAIN_CAPPED,%s은(는) 잠재치 한계에 닿았다.
+ACT_REST_DONE,푹 쉬었다. 기력 %d → %d
+TALK_DARK_ELF_INSIST_1,"먼저 말해두는데, 우린 그냥 엘프야. 피부색이 좀 다를 뿐이라고."
+TALK_DARK_ELF_INSIST_2,"아니, 다른 종족 아니야. 같은 숲에서 같은 밥 먹고 자랐어."
+TALK_SEE_DARK_ELF_1,"어, 처음 보는 종족인데… 아, 그냥 엘프라고? 실례했수다."
+TALK_SEE_DARK_ELF_2,"다크엘프는 다른 나라 사람인 줄 알았는데. 숲에서 왔다고?"
+TALK_LOOK_DOWN_1,"용병이 무슨 일로? 짧게 말하게. 나는 바쁜 몸이야."
+TALK_LOOK_DOWN_2,"계약 얘기라면 길드를 통하게. 나랑 직접 할 얘기는 없을 텐데."
+TALK_LOOK_DOWN_3,"흠, 용병치고는 예의가 있군. 그래, 들어나 보지."
+TALK_COLD_1,…또 너냐.
+TALK_COLD_2,볼일 없으면 가 줘.
+TALK_NEUTRAL_1,요즘 전쟁 소식 들었어? 또 국경이 시끄럽다더군.
+TALK_NEUTRAL_2,이 도시 술은 괜찮아. 값이 문제지.
+TALK_NEUTRAL_3,용병이 늘었어. 일감은 그대로인데.
+TALK_NEUTRAL_4,오늘 날씨 좋네. 전쟁하기엔 아깝게.
+TALK_WARM_1,왔어? 마침 심심하던 참이야.
+TALK_WARM_2,네 소문 들었어. 나쁘지 않던데?
+TALK_CLOSE_1,너라면 언제든 환영이지. 앉아.
+TALK_CLOSE_2,무슨 일 있으면 말해. 내가 도울게.
+TALK_INTERACT_1,한잔 사는 거야? 좋지! 오늘은 네가 마음에 드는군.
+TALK_INTERACT_2,"선물? 이런 걸 다… 고마워. 기억해 둘게."
+TALK_INTERACT_3,"하하, 이 집 안주가 제일이야. 자주 오자고."
+TITLE_NEW_GAME,새 게임
+TITLE_CONTINUE,이어하기
+TITLE_DATA_CHECK,데이터 점검
+CREATE_TITLE,주인공 만들기
+CREATE_NAME,이름
+CREATE_NAME_HINT,이름을 입력하세요 (8자 이내)
+CREATE_RACE,종족
+CREATE_GENDER,성별
+CREATE_ORIGIN,출신 국가
+CREATE_BACKGROUND,출신 배경
+CREATE_STATS,능력치
+CREATE_RACE_DESC,"수명 %d년 · 성인 %d세 · 시작 나이 %d세
+특성: %s"
+CREATE_DARK_ELF_NOTE,"능력치·문화·사는 곳은 엘프와 같다. 다만 외지인에게 자주 다른 종족으로 오해받는다."
+CREATE_BG_START,시작 금 %s · 시작 도시 %s
+CREATE_RACE_MOD,종족 %+d
+CREATE_POINTS_LEFT,남은 보너스 포인트: %d
+CREATE_START,떠돌이 용병으로 출발!
+BOOT_BACK,돌아가기
+HELPER_SPEAR,길드 창병대 %d
+HELPER_ARCHER,길드 궁병대 %d
+HELPER_RIDER,길드 기병대 %d
+TERRAIN_B_PLAINS,평지
+TERRAIN_B_FOREST,숲
+TERRAIN_B_HILL,언덕
+TERRAIN_B_RIVER,강
+TERRAIN_B_BURNT,불탄 땅
+TERRAIN_B_WALL,성벽
+TERRAIN_B_GATE,성문
+ACT_FAIL_NO_QUEST,그런 의뢰가 없다.
+ACT_FAIL_QUEST_FULL,의뢰는 동시에 2개까지만 받을 수 있다.
+ACT_FAIL_QUEST_ELSEWHERE,의뢰를 받은 도시로 가야 한다.
+ACT_FAIL_INJURED,부상 중이라 싸울 수 없다.
+ACT_FAIL_NO_TROOPS,데려갈 병사가 없다.
+ACT_QUEST_ACCEPTED,의뢰를 받았다: %s
+ACT_SUBJUGATE_START,%s — 출발!
+GUILD_TITLE,용병 길드 게시판
+GUILD_MY_QUESTS,받은 의뢰
+GUILD_NO_QUEST,게시된 의뢰가 없다.
+GUILD_QUEST_LINE,%s 토벌 (%d단계)
+GUILD_QUEST_REWARD,보수 금 %s · 명성 +%d · 마감 %d년 %d월
+GUILD_QUEST_WHERE,의뢰 도시: %s
+GUILD_ACCEPT,수주
+GUILD_GO,출발
+BATTLE_TITLE,%s · %d턴
+BATTLE_PHASE_ALLY,아군 차례
+BATTLE_PHASE_ENEMY,적 차례
+BATTLE_END_TURN,턴 종료
+BATTLE_AUTO,자동
+BATTLE_RETREAT,후퇴
+BATTLE_RETREAT_CONFIRM,정말 후퇴할까? 의뢰는 실패로 끝난다.
+BATTLE_ATTACK,공격
+BATTLE_SKILL,전법
+BATTLE_WAIT,대기
+BATTLE_CANCEL,취소
+BATTLE_CONFIRM_ATTACK,공격!
+BATTLE_HINT_SELECT,움직일 아군 부대를 누르세요 (길게 누르기·우클릭: 부대 상세)
+BATTLE_HINT_MOVE,파란 칸을 눌러 이동 (제자리면 부대를 다시 누름)
+BATTLE_HINT_TARGET,붉은 칸의 적을 누르세요
+BATTLE_HINT_SKILL_TARGET,전법을 쓸 칸을 누르세요
+BATTLE_UNIT_LINE,%s · 병력 %s/%s · 사기 %d · 기력 %d
+BATTLE_PREVIEW,예상 피해 %d~%d (상대 병력 %s)
+BATTLE_PREVIEW_COUNTER,반격 예상 %d~%d
+BATTLE_SKILL_LINE,%s (기력 %d)
+BATTLE_NO_SKILL,쓸 수 있는 전법이 없다.
+BATTLE_LEADER,총대장
+BATTLE_WIN,토벌 성공!
+BATTLE_LOSE,토벌 실패…
+BATTLE_INJURED,%s 부대 궤멸. 부상으로 %d개월 동안 싸울 수 없다.
+BATTLE_REWARD,보수 금 %s · 명성 +%d
+BATTLE_FAILED,보수는 없다. 길드 장부에 '실패' 한 줄이 늘었다.
+BATTLE_REPORT_TITLE,[길드 보고]
+BATTLE_REPORT_LOSS,"출정 병력 손실 %s명 (%d%%)."
+BATTLE_REPORT_HELPER_LOST,%s: 귀환하지 않음. 장부에서 이름을 지운다.
+BATTLE_REPORT_DONE,의뢰 완료. 보수 지급.
+BATTLE_REPORT_FAIL,의뢰 실패. 다음 용병에게 넘긴다.
+BATTLE_BACK,지도로 돌아가기
+BATTLE_DAMAGE,-%d
+BATTLE_HEAL,+%d
+BATTLE_GUARD,방어 태세
+CARD_TROOPS,병력 %s/%s · %s
+CITY_GUILD_SECTION,용병 길드
+HIRED_SPEAR,고용 창병대 %d
+HIRED_ARCHER,고용 궁병대 %d
+HIRED_RIDER,고용 기병대 %d
+HIRE_TITLE,용병 고용 (%d/%d부대)
+HIRE_LINE,%s: 병력 %s/%s · 계약 %d개월 남음
+HIRE_BUTTON,"%s 고용
+금 %d"
+ACT_FAIL_HIRE_FULL,더는 고용할 수 없다. (고용 한도)
+ACT_HIRED,%s 계약 완료. 금 %d · %d개월
+BATTLE_REPORT_HIRED_LOST,%s: 전멸. 계약은 자동으로 끝난다.
+LOG_HIRE_ENDED,고용한 %s 부대의 계약이 끝나 떠났다.
+UNIT_TEAM_ALLY,아군
+UNIT_TEAM_ENEMY,적군
+UNIT_TERRAIN,지형: %s · 방어 %+d%%
+UNIT_TROOPS,병력
+UNIT_MORALE,사기
+UNIT_SP,기력
+UNIT_MOVE_RANGE,"이동력 %d · 사거리 %d~%d · 공격력 %d
+사기 보정: 주는 피해 %d%% · 받는 피해 %d%%"
+TERRAIN_B_RUBBLE,무너진 성문
+DIPLO_TRUCE_RENEWED,%s와(과) %s의 휴전이 연장되었다.
+DIPLO_WAR_RESUMED,%s와(과) %s의 휴전이 끝났다. 전쟁 재개.
+DIPLO_BALANCE_TRUCE,%s이(가) %s와(과) 휴전했다. 약해진 이웃은 남겨 두는 편이 싸다.
+DIPLO_BALANCE_AID,%s이(가) %s에 금 %s을(를) 보냈다. 명목은 우호. 실은 보험.
+DIPLO_BALANCE_STRONG,%s의 세력이 너무 커졌다. 대륙이 긴장한다.
+DIPLO_TRUCE_AGAINST,%s와(과) %s이(가) 휴전했다. %s을(를) 견제하기 위해.
+DIPLO_WAR_ON_STRONG,%s이(가) %s에 선전포고했다.
+ECON_DESERTION,%s: 군량·급료가 밀려 병사 %s명이 탈영했다.
+REPORT_IN_BUDGET,예산 범위 내.
+REPORT_OVER_BUDGET,예산 초과. 다음 분기에 조정.
+REPORT_CAPTURED,"%s군이 %s을(를) 점령했다(전 %s령). 출정 병력 손실 %d%%. %s"
+REPORT_REPELLED,"%s군의 %s 공격 실패(%s 방어 성공). 출정 병력 손실 %d%%. %s"
+REPORT_MERCS,%s: 용병 %s명 고용. 계약금 %s.
+REPORT_DIED,%s(%s) 전사.
+REPORT_FALLEN,%s 멸망.
+REPORT_TITLE,%d년 %d월 정세 보고
+REPORT_BATTLES,전황
+REPORT_DIPLOMACY,외교
+REPORT_DEATHS,전사자 명단
+REPORT_ECONOMY,경제
+REPORT_LOG,내 소식
+REPORT_QUIET,조용한 한 달이었다. 어디선가 누군가는 싸웠겠지만 보고할 만한 일은 아니다.
+REPORT_PLANNED,이번 달 출정 예정
+REPORT_PLAN_LINE,%s군 → %s(%s령)
+WAR_QUEST_ATTACK,%s군 %s 공격 참전
+WAR_QUEST_DEFEND,%s군 %s 방어 참전
+WAR_QUEST_ENEMY,상대: %s
+ACT_FAIL_BOTH_SIDES,같은 전투의 양쪽 의뢰를 동시에 받을 수는 없다.
+ACT_FAIL_PLAN_GONE,그 전투는 이미 끝났다.
+REGULAR_NAME,%s %s대 %d
+BATTLE_WAR_REP,평판: %s +%d · %s -%d
+BATTLE_WAR_EFFECT_WIN,%s 전투의 흐름이 바뀌었다. 결과는 월말 보고에서.
+BATTLE_WAR_EFFECT_LOSE,%s 전투에서 밀렸다. 결과는 월말 보고에서.
+BATTLE_HINT_KEEP,성 안 거점(★)을 밟아도 승리
+BATTLE_HINT_DEFEND,%d턴 동안 성을 지키면 이긴다
+BATTLE_GATE_LINE,성문 내구도 %d/%d
+STAT_INCOME,월 세수
+STAT_HARVEST,가을 수확
+CARD_REPUTATION,평판:
+MAP_AT_WAR,전쟁 중: %s
+MAP_TRUCE,휴전: %s
+MAP_NO_WAR,전쟁 상대 없음
+NATION_TREASURY,국고 금 %s · 식량 %s
+BATTLE_PREVIEW_GATE,성문 피해 %d~%d (내구도 %d)
+BATTLE_GATE_BROKEN,성문 붕괴!
+REPORT_PEOPLE,인사
+PEOPLE_NEW_RULER,%s이(가) %s의 새 군주로 즉위했다.
+PEOPLE_RECRUITED,재야의 %s이(가) %s에 출사했다.
+PEOPLE_GENERIC,%s이(가) 무명의 무장 %s을(를) 기용했다.
+PEOPLE_WANDERER,떠돌이 %s(%s)이(가) %s에 나타났다.
+BATTLE_GOLD,금 %s
+BATTLE_BONUS,"포상
+금 %d"
+BATTLE_BONUS_POP,사기 +%d
+BATTLE_BONUS_DONE,%s에게 포상금 %d. 사기 %d. 용병의 충성은 금화 소리에 비례한다.
+BONUS_FAIL_TARGET,포상을 줄 수 없는 부대다.
+BONUS_FAIL_FULL,이미 사기가 최고다.
+BATTLE_BONUS_SPENT,포상금 %s 지출.
+BATTLE_BONUS_POP_NONE,…
+BATTLE_BONUS_WASTED,%s에게 포상금 %d. 돈은 잘 받았지만 사기는 그대로다(%d). 이미 받을 만큼 받았다.
+CAREER_UNPAID,%s에게 월급을 못 줬다. 친밀도 %d.
+CAREER_COMPANION_LEFT,%s이(가) 짐을 싸서 떠났다. 밀린 월급 얘기는 끝내 꺼내지 않았다.
+CAREER_PROMOTED,%s: %s(으)로 승진!
+CAREER_TOP,더 오를 자리가 없다.
+CAREER_REQ_FAME,명성 %d/%d
+CAREER_REQ_COMPANIONS,동료 %d/%d명
+CAREER_REQ_MERIT,공적 %d/%d
+CAREER_NEXT,다음: %s (%s)
+CAREER_SALARY,녹봉 금 %s을(를) 받았다.
+CAREER_WAR_ORDER,출진 명령: %s 전투에 참전하라.
+CAREER_MISSION_DONE,임무 완수: %s (공적 +%d)
+CAREER_MISSION_FAILED,임무 실패: %s. 평정에서 한 소리 들었다.
+MISSION_WAR,%s 전투 참전
+MISSION_SUBJUGATE,우리 나라 도시에서 토벌 의뢰 완수
+MISSION_TRAIN,수행 %d회
+MISSION_DEVELOP,영지 통치 %d회
+CONTRACT_BETRAYED,"%s과(와)의 계약을 깼다. 위약금 금 %s. 길드 장부에 '배신자'라고 적혔다."
+CONTRACT_PAID,%s 계약 보수 금 %s.
+CONTRACT_DONE,%s과(와)의 계약을 무사히 마쳤다. 평판이 올랐다.
+CONTRACT_WIN_BONUS,계약 전과 보너스 금 %s
+CONTRACT_SIGNED,%s과(와) 계약: %d개월 · 월 금 %s
+CONTRACT_TITLE,%s 용병단 계약 (%d개월 · 월 금 %s)
+CONTRACT_FAIL_NO_COMPANY,용병단이 있어야 계약할 수 있다.
+CONTRACT_FAIL_VASSAL,봉신은 용병 계약을 맺을 수 없다.
+CONTRACT_FAIL_SAME,이미 그 나라와 계약 중이다.
+ACT_FAIL_OWN_NATION,자기 나라를 치는 의뢰는 받을 수 없다.
+RECRUIT_FAIL_NOT_FREE,영입할 수 있는 사람이 아니다.
+RECRUIT_FAIL_SLOTS,더 데리고 다닐 수 없다. (동료 한도)
+RECRUIT_JOINED,%s이(가) 동료가 되었다!
+RECRUIT_REFUSED,%s이(가) 거절했다. (성공 확률 %d%%)
+HIRE_OFFICER_DONE,무명 무장 %s을(를) 고용했다. 금 %d.
+DISMISS_DONE,%s을(를) 내보냈다.
+COMPANY_FAIL_ALREADY,이미 용병단이 있다.
+COMPANY_FAIL_RANK,용병대장이 되어야 용병단을 만들 수 있다.
+COMPANY_DEFAULT_NAME,%s 용병단
+COMPANY_FORMED,'%s' 결성!
+SERVE_FAIL_ALREADY,이미 나라를 섬기고 있다.
+SERVE_FAIL_NO_NATION,이 도시는 섬길 나라가 없다.
+SERVE_FAIL_RANK,베테랑 용병은 되어야 받아 준다.
+SERVE_FAIL_HATED,이 나라에서는 평판이 나빠 받아 주지 않는다.
+SERVE_FAIL_UNKNOWN,아직 이 나라에 이름이 알려지지 않았다. (평판 5 또는 명성 40 필요)
+SERVE_ACCEPTED,%s의 봉신이 되었다! 이제부터 고용 기사다.
+SERVE_REFUSED,%s이(가) 거절했다. (수락 확률 %d%%)
+TAVERN_DISCOVER,술집 구석에 %s(%s)이(가) 혼자 앉아 있다.
+TAVERN_BRAWL,술 취한 %s이(가) 시비를 건다!
+RUMOR_WAR,소문: %s이(가) %s와(과) 싸우느라 정신이 없다더군.
+RUMOR_RICH,소문: %s 국고에는 금이 넘친다던데. 용병 일거리가 많겠어.
+RUMOR_POOR,소문: %s은(는) 요즘 돈이 말랐다더군. 급료가 밀린대.
+RUMOR_WANDERER,소문: %s(이)라는 떠돌이가 %s에 있다던데. 쓸 만하다는 얘기도 있고.
+RUMOR_NOTHING,소문: 별일 없다. 다들 전쟁 얘기뿐이다.
+TAVERN_DRINK_1,한잔했다. 맥주는 미지근했고 안주는 짰다.
+TAVERN_DRINK_2,옆자리 용병이 전우 이름을 하나씩 부르며 잔을 비웠다. 다 부르는 데 한참 걸렸다.
+TAVERN_DRINK_3,오늘은 조용하다. 이 동네 용병들은 다 어디 갔을까.
+GOVERN_FAIL_NO_CITY,다스리는 도시가 없다.
+GOVERN_FAIL_NOT_HERE,다스리는 도시에 있어야 한다.
+GOVERN_FAIL_FULL,더 모을 병사가 없다.
+GOVERN_FAIL_TREASURY,국고가 모자란다.
+GOVERN_DEVELOPED,%s +%d (현재 %d)
+GOVERN_DEFENSE,방어 강화 (현재 %d)
+GOVERN_CONSCRIPT,병사 %s명 징병 (도시 병력 %s)
+GOVERN_SPENT,%s 국고에서 금 %s 지출.
+LAUNCH_FAIL_TARGET,전쟁 중인 이웃 도시만 칠 수 있다.
+LAUNCH_FAIL_BUSY,이번 달은 이미 그쪽 출정이 잡혀 있다.
+LAUNCH_FAIL_TROOPS,병력이 부족하다. (500명 이상)
+LAUNCH_DONE,%s(으)로 출진!
+DUEL_TITLE,결투 — %d/%d 턴
+DUEL_ATTACK,공격
+DUEL_DEFEND,방어
+DUEL_TECH,"기술
+(기력 %d)"
+DUEL_HP,체력 %d/%d · 기력 %d
+DUEL_HINT,상대: %s
+DUEL_TELL_ATTACK_1,어깨에 힘이 들어간다.
+DUEL_TELL_ATTACK_2,눈빛이 사납다. 먼저 치고 들어올 기세다.
+DUEL_TELL_DEFEND_1,자세가 낮다.
+DUEL_TELL_DEFEND_2,무기를 몸 가까이 당긴다.
+DUEL_TELL_TECH_1,숨을 깊게 고른다.
+DUEL_TELL_TECH_2,무기 끝이 미묘하게 흔들린다. 뭔가 준비하는 듯하다.
+DUEL_ROUND_ATTACK_ATTACK,%s와(과) %s이(가) 정면으로 부딪쳤다!
+DUEL_ROUND_ATTACK_DEFEND,%s의 공격을 %s이(가) 막고 반격했다!
+DUEL_ROUND_DEFEND_ATTACK,%s이(가) %s의 공격을 막아 내고 반격했다!
+DUEL_ROUND_ATTACK_TECH,%s의 공격이 기술을 준비하던 %s을(를) 끊었다!
+DUEL_ROUND_TECH_ATTACK,기술을 준비하던 %s이(가) %s에게 먼저 맞았다!
+DUEL_ROUND_TECH_DEFEND,%s의 기술이 %s의 방어를 꿰뚫었다!
+DUEL_ROUND_DEFEND_TECH,%s의 방어가 %s의 기술에 뚫렸다!
+DUEL_ROUND_TECH_TECH,%s와(과) %s의 기술이 부딪쳤다! 둘 다 크게 휘청인다.
+DUEL_ROUND_DEFEND_DEFEND,%s와(과) %s이(가) 서로 노려보며 숨을 골랐다.
+DUEL_WIN,결투 승리!
+DUEL_LOSE,결투 패배…
+DUEL_RESULT_BATTLE,결투: %s 승리. %s 부대의 사기가 크게 꺾였다.
+DUEL_DIED,%s 전사. 결투는 담담하게 끝났다.
+DUEL_TAVERN_WIN,"술집이 환호한다. 명성 +%d"
+DUEL_TAVERN_LOSE,"얻어맞고 술값까지 덤터기를 썼다. 금 -%d"
+DUEL_CHALLENGE,결투 신청
+DUEL_REFUSED,%s이(가) 결투를 거절했다. 부대가 수군거린다.
+DUEL_BUTTON_OK,확인
+TALK_RECRUIT_YES_1,좋아. 당신 밑이라면 밥은 굶지 않겠지.
+TALK_RECRUIT_YES_2,마침 할 일이 없던 참이야. 같이 가지.
+TALK_RECRUIT_NO_1,아직은 혼자가 편해. 다음에 다시 물어봐.
+TALK_RECRUIT_NO_2,"당신 이름, 아직은 잘 모르겠는데."
+TALK_HIRED_OFFICER_1,"돈 받은 만큼은 일하지. 그 이상은 기대하지 마."
+TALK_HIRED_OFFICER_2,"무명이라고 무시하지 말라고. 언젠가 이름을 날릴 테니까."
+TALK_SERVE_YES_1,용병치고는 쓸 만하군. 오늘부터 우리 나라의 기사다.
+TALK_SERVE_YES_2,"충성은 말이 아니라 공적으로 보여 주게."
+TALK_SERVE_NO_1,"용병을 기사로? 아직은 이르네."
+TALK_SERVE_NO_2,자네 같은 사람은 계약서로 부리는 편이 싸다네.
+TALK_TAVERN_MEET_1,…일거리 있으면 말해. 싸게 해 줄게.
+TALK_TAVERN_MEET_2,"용병이야? 나도 한때는 그랬지."
+TALK_TAVERN_BRAWL_1,"어이, 거기! 내 술잔을 쳤잖아!"
+TALK_TAVERN_BRAWL_2,"용병 나부랭이가 여기서 왜 마셔? 밖으로 나와!"
+CITY_TAVERN,술집
+CITY_SERVE,투신
+CITY_GOVERN_SECTION,영지 통치
+GOVERN_COMMERCE,"상업 개발
+금 %d"
+GOVERN_AGRICULTURE,"농업 개발
+금 %d"
+GOVERN_DEFENSE_BTN,"방어 강화
+금 %d"
+GOVERN_CONSCRIPT_BTN,"징병 %d명
+금 %d"
+GOVERN_LAUNCH,"출진 → %s
+(행동력 %d)"
+GOVERN_TREASURY,%s 국고 금 %s
+ACTION_RECRUIT,영입
+GUILD_HIRE_OFFICER,"무명 무장 고용
+금 %d"
+COMPANY_TAB_TITLE,나의 출세
+COMPANY_STATUS,%s · 명성 %d · 공적 %d
+COMPANY_COMPANIONS,동료 (%d/%d명)
+COMPANY_NO_COMPANIONS,"동료가 없다. 재야를 영입하거나, 길드에서 무명 무장을 고용하자."
+COMPANY_WAGE,월급 금 %d
+COMPANY_DISMISS,해고
+COMPANY_NONE,용병단 없음
+COMPANY_FORM,용병단 결성
+COMPANY_NAME_LINE,용병단: %s
+COMPANY_CONTRACT,"계약: %s · %d개월 남음 · 월 금 %s"
+COMPANY_NO_CONTRACT,계약 없음
+COMPANY_VASSAL,"%s의 %s"
+COMPANY_GOVERNS,다스리는 도시: %s
+COMPANY_MISSION,이번 달 임무: %s (%d/%d)
+COMPANY_NO_MISSION,이번 달 임무 없음
+COMPANY_BETRAYALS,배신 기록 %d회
+COMPANY_HOW_TO_SERVE,"투신: 베테랑 용병 이상 + 그 나라 평판 5 또는 명성 40 → 그 나라 도시의 [도시] 탭에서"
+PEOPLE_COMPANION,동료
+EV_OK,알았다
+EV_NEXT,다음
+EV_CLOSE,닫기
+EV_NARRATOR,
+EFFECT_GOLD_UP,금 +%d
+EFFECT_GOLD_DOWN,금 -%d
+EFFECT_FAME,명성 %+d
+EFFECT_MERIT,공적 %+d
+EFFECT_ENERGY,기력 %+d
+EFFECT_AFFINITY,%s 친밀도 %+d (현재 %d)
+EFFECT_REPUTATION,%s 평판 %+d
+EFFECT_COMPANION_FAIL,"(동료로 들일 자리가 없다.)"
+EFFECT_INJURY,부상 %d개월
+EFFECT_TROOPS,병력 %+d
+EV_DICE_1,"한 판 어때? 주사위 두 개, 높은 쪽이 먹는 거야. 판돈은 20."
+EV_DICE_BET,건다 (금 20)
+EV_DICE_PASS,사양한다
+EV_DICE_WIN,주사위가 웃어 줬다!
+EV_DICE_LOSE,주사위는 늘 그렇듯 술집 편이었다.
+EV_OLDMERC_1,구석 자리 늙은 용병이 빈 잔을 줄줄이 세워 두고 있다.
+EV_OLDMERC_2,"이건 그로그, 이건 말테, 이건… 이름이 뭐였더라. 다 같은 해에 죽었지. 장부엔 '소모율 9%'라고 적혔고."
+EV_OLDMERC_BUY,한 잔 산다 (금 10)
+EV_OLDMERC_LISTEN,조용히 들어 준다
+EV_RECRUITER_1,"관복 차림의 사내가 다가온다. '자네 같은 사람이 우리 나라엔 필요하지. 언젠가 정식으로 섬길 생각은 없나?'"
+EV_RECRUITER_LISTEN,이야기를 들어 본다
+EV_RECRUITER_IGNORE,술이나 마신다
+EV_RECRUITER_IGNORED,사내는 명함만 남기고 갔다. 종이가 꽤 좋다.
+EV_DE_MISREAD_1,"어, 처음 뵙는 종족이시네. 어느 나라 분이세요? 지하에서 오셨나?"
+EV_DE_MISREAD_2,…또 시작이군.
+EV_DE_LAUGH,웃어넘긴다
+EV_DE_EXPLAIN,"엘프 갈래에 대해 차근차근 설명한다"
+EV_DE_EXPLAINED,"한참 설명했더니 상대가 고개를 끄덕였다. '아, 그러니까… 엘프인데 다크엘프?' 반쯤은 전해진 것 같다."
+EV_DE_GLARE,말없이 노려본다
+EV_WANDERER_1,"저기, 당신 용병이죠? 나 좀 데려가 줘요. 밥값은 할게요. 아마도."
+EV_WANDERER_YES,같이 가자
+EV_WANDERER_NO,미안하지만 안 된다
+EV_WANDERER_LEFT,떠돌이는 어깨를 으쓱하고 다음 술집으로 갔다.
+EV_PAYDAY_1,"월급날, 동료들끼리 누가 더 많이 받느냐로 언성이 높아졌다."
+EV_PAYDAY_PAY,웃돈으로 달랜다 (금 30)
+EV_PAYDAY_SPEECH,연설로 달랜다
+EV_PAYDAY_PAID,돈은 늘 가장 빠른 해결책이다. 가장 비싸기도 하고.
+EV_PAYDAY_SPOKE,"'우리는 돈이 아니라 서로를 위해 싸운다!' …다들 박수는 쳤다. 다음 달에 또 그럴 것 같다."
+EV_REPORT_1,평정 자리. 회계관이 두루마리를 펼친다.
+EV_REPORT_2,"'지난 분기 출정 병력 손실 11%. 예산 범위 내. 다음 분기 소모율 목표는 12%입니다.' 아무도 이름을 묻지 않는다."
+EV_REPORT_NOD,고개를 끄덕인다
+EV_REPORT_OBJECT,"그 11%에도 이름이 있다고 말한다"
+EV_REPORT_OBJECTED,"회계관이 안경을 고쳐 썼다. '이름은 예산 항목이 아니라서요.' 그래도 몇몇 기사가 당신을 다시 봤다."
+EV_WINTER_1,눈보라가 친다. 얇은 외투로는 버티기 힘들다.
+EV_WINTER_BUY,털외투를 산다 (금 20)
+EV_WINTER_ENDURE,이를 악물고 버틴다
+EV_WINTER_WARM,따뜻하다. 돈의 온기다.
+EV_HARVEST_1,"가을 수확제! 광장에 음악과 술과 구운 고기 냄새가 가득하다."
+EV_HARVEST_JOIN,축제를 즐긴다 (금 10)
+EV_HARVEST_WORK,축제 경비 일을 맡는다
+EV_HARVEST_WORKED,"남들이 노는 동안 일했다. 지갑은 두둑해졌고, 마음은 조금 허전하다."
+EV_REFUGEE_1,"국경에서 밀려온 피란민들이 성문 앞에 줄을 섰다. 아이 하나가 당신의 칼집을 빤히 본다."
+EV_REFUGEE_GIVE,식량 값을 보탠다 (금 30)
+EV_REFUGEE_PASS,지나친다
+EV_REFUGEE_PASSED,"용병은 전쟁으로 먹고산다. 알고 있다. 그래도 발걸음이 조금 무거웠다."
+EV_BASTARD_1,"낡은 편지가 도착했다. 어머니의 필체다. '네 아버지는… 발루아 가문의 —' 거기서 잉크가 번져 있다."
+EV_BASTARD_2,"…그 편지, 어디서 났나? 아니, 됐다. 아무것도 묻지 마라."
+EV_BASTARD_ASK,끝까지 묻는다
+EV_BASTARD_ASKED,"가브리엘은 대답 대신 오래된 검 손잡이를 쥐었다 놓았다. 그것만으로도 충분한 대답 같았다."
+EV_BASTARD_BURN,편지를 태운다
+EV_BASTARD_BURNED,"이름은 스스로 만드는 거다. 편지는 금세 재가 되었다."
+EV_DEBT_1,"집에서 편지가 왔다. '가게가 어려우니 금 100만 보내다오. 셋째야, 너만 믿는다.' 큰형 글씨다."
+EV_DEBT_PAY,보낸다 (금 100)
+EV_DEBT_REFUSE,답장만 보낸다
+EV_DEBT_PAID,"메르카 상인들 사이에 '의리 있는 셋째'라는 소문이 돌았다."
+EV_DEBT_REFUSED,"'형님, 장사는 형님 몫입니다.' 쓰고 나니 속이 시원했다. 셈은 정확했다."
+EV_RIVAL_1,"이게 누구야? 학원에서 쫓겨난 그 사람 아냐? 아직도 불장난하고 다녀?"
+EV_RIVAL_2,…오랜만이군.
+EV_RIVAL_DUEL,실력으로 대답한다 (결투)
+EV_RIVAL_LEAVE,상대하지 않는다
+EV_RIVAL_LEFT,"등 뒤로 웃음소리가 따라왔다. 오늘은 참기로 했다."
+EV_TRACKS_1,숲길에 큰 짐승 발자국이 찍혀 있다. 사냥꾼의 피가 끓는다.
+EV_TRACKS_FOLLOW,추적한다
+EV_TRACKS_IGNORE,오늘은 일하러 왔다
+EV_TRACKS_WIN,"멋진 사냥! 가죽은 비싸게 팔렸고, 소문도 났다."
+EV_TRACKS_LOSE,짐승이 먼저 당신을 찾았다.
+EV_LOOT_1,전장 한쪽에 주인 없는 짐수레가 남아 있다.
+EV_LOOT_KEEP,챙긴다
+EV_LOOT_SHARE,같이 싸운 이들과 나눈다
+EV_LOOT_SHARED,"'저 사람은 나눌 줄 안다.' 용병들 사이에서 그런 말은 금보다 오래 남는다."
+EV_LEDGER_1,"전투가 끝나고 길드 서기가 장부를 내민다. 서명하는 칸 옆에, 줄이 그어진 이름들이 보인다."
+EV_LEDGER_REMEMBER,지워진 이름들을 하나씩 읽는다
+EV_LEDGER_SIGN,서명하고 돌아선다
+EV_LEDGER_REMEMBERED,"서기가 별난 사람이라는 듯 쳐다봤다. 이름을 다 읽는 데 꽤 걸렸다."
+EV_LEDGER_SIGNED,펜은 가벼웠다. 그게 더 무거웠다.
+EV_VETERAN_1,"길드 서기가 장부의 당신 이름 옆에 줄을 하나 더 긋는다. '축하합니다, 베테랑. 이제 죽으면 보고서에 이름이 한 줄 더 길게 나갑니다.'"
+EV_KNIGHT_1,"서임식. 칼끝이 어깨에 닿는다. '이제부터 그대는 이 나라의 기사다.' 박수는 짧고, 서류는 길다."
+EV_KNIGHT_2,"(용병일 때는 계약서 한 장이었는데.)"
+EV_KNIGHT_HONOR,명예를 맹세한다
+EV_KNIGHT_SALARY,녹봉 날짜부터 확인한다
+EV_KNIGHT_PAID,"회계관이 처음으로 웃었다. '말이 통하는 분이시군요.' 첫 녹봉이 미리 나왔다."
+EV_LORD_1,"성의 열쇠를 받았다. 이제 이 도시의 세금도, 병사도, 장부도 당신 몫이다. 소모율 보고서에 당신의 서명이 들어간다."
+EV_CAPTAIN_1,"용병대장. 술집에 들어서면 대화가 잠깐 멈춘다. 신임 성주의 하인보다는 여전히 아래지만, 용병들 사이에선 이야기가 다르다."
+MENU_TITLE,메뉴
+MENU_SAVE,저장
+MENU_LOAD,불러오기
+MENU_SLOT,슬롯 %d
+MENU_SLOT_EMPTY,슬롯 %d — 비어 있음
+MENU_SLOT_INFO,"슬롯 %d — %d년 %d월 · %s · %s"
+MENU_AUTO_INFO,"자동 저장 — %d년 %d월 · %s · %s"
+MENU_SAVED,슬롯 %d에 저장했다.
+MENU_LOADED,불러왔다.
+MENU_DATA_CHECK,데이터 점검
+MENU_TO_TITLE,타이틀로
+MENU_BACK,돌아가기
+TITLE_LOAD,불러오기
+CITY_SHOP,상점
+UI_AP_FREE,(행동력 0)
+SHOP_TITLE,%s 상점
+SHOP_GOLD,소지금 %s
+SHOP_BUY,"사기
+금 %d"
+SHOP_OWNED,착용 중
+SHOP_FAIL_NOT_SOLD,이 상점에서는 팔지 않는다.
+SHOP_FAIL_OWNED,이미 착용하고 있다.
+SHOP_USED,%s 사용 (금 %d)
+SHOP_SOLD,%s을(를) 금 %d에 팔았다.
+SHOP_EQUIPPED,%s 착용! (금 %d)
+SLOT_WEAPON,무기
+SLOT_ARMOR,갑옷
+SLOT_ACCESSORY,장신구
+SLOT_CONSUMABLE,소모품
+CARD_EQUIPMENT,장비:
+ITEM_USE_INJURY,부상 %d개월 회복
+ITEM_USE_ENERGY,기력 +%d
+ITEM_USE_TROOPS,병력 +%d
+ITEM_OLD_SWORD,낡은 검
+ITEM_KNIGHT_SWORD,기사의 장검
+ITEM_MASTER_BLADE,명장의 대검
+ITEM_HUNTER_BOW,사냥꾼의 활
+ITEM_ELF_BOW,숲엘프 장궁
+ITEM_STAFF,마도사의 지팡이
+ITEM_ARCHMAGE_ROD,대마도의 홀
+ITEM_DWARF_AXE,드워프 전투도끼
+ITEM_LEATHER,가죽 갑옷
+ITEM_CHAIN,사슬 갑옷
+ITEM_PLATE,판금 갑옷
+ITEM_ELF_CLOAK,엘프 망토
+ITEM_SILVER_RING,은반지
+ITEM_MERCHANT_SEAL,상인의 인장
+ITEM_WARHORSE,군마
+ITEM_CHARM,행운의 부적
+ITEM_STRATEGY_BOOK,병법서
+ITEM_SALVE,상처약
+ITEM_TONIC,기력 영약
+ITEM_RECRUITS,"신병 모집 (병력 보충)"
+FAMILY_DIED_OLD_AGE,%s이(가) %d세에 세상을 떠났다. 장부에는 '자연 감소'라고 적혔다.
+FAMILY_DIED_BATTLE,%s이(가) %d세에 전장에서 쓰러졌다.
+FAMILY_ADULT,%s이(가) %d세가 되어 어른이 되었다.
+FAMILY_BIRTH,%s와(과) %s 사이에 아이가 태어났다! (%s)
+FAMILY_SUCCESSION,%s이(가) %s의 뒤를 잇는다.
+BATTLE_DIED,%s 전사.
+ROMANCE_FAIL_NOT_SINGLE,둘 다 미혼 성인이어야 한다.
+ROMANCE_FAIL_ALREADY,이미 연인이다.
+ROMANCE_FAIL_AFFINITY,아직 그 정도로 가깝지 않다.
+ROMANCE_FAIL_NOT_LOVER,먼저 마음을 전해야 한다.
+SWORN_FAIL_ALREADY,이미 맹우다.
+ROMANCE_LOVERS,%s와(과) 연인이 되었다!
+ROMANCE_REJECTED,%s은(는) 대답 대신 웃기만 했다. 아직은 아닌 모양이다.
+ROMANCE_MARRIED,%s와(과) 결혼했다! 혼례 비용으로 금 100을 썼다.
+SWORN_DONE,%s와(과) 맹우의 연을 맺었다. 이제 서로의 뒤를 맡긴다.
+ACTION_CONFESS,고백
+ACTION_PROPOSE,청혼
+ACTION_SWEAR,맹세
+TALK_CONFESS_YES_1,…사실 나도 언제 말하나 기다리고 있었어.
+TALK_CONFESS_YES_2,"용병이랑 연애라니, 불안해서 어쩌지. 그래도 좋아."
+TALK_CONFESS_NO_1,"고마워. 그런데 지금은 전쟁 생각뿐이라."
+TALK_CONFESS_NO_2,"…조금만 더 시간을 줘."
+TALK_PROPOSE_YES_1,"좋아. 대신 살아서 돌아와. 매번."
+TALK_PROPOSE_YES_2,"평생 같이 가자. 장부에 이름이 지워질 때까지."
+TALK_SWEAR_1,"오늘부터 네 등은 내가 지킨다. 내 등은 네가 지켜."
+TALK_SWEAR_2,"같은 날 태어나진 않았지만, 같은 장부에 이름을 올리자."
+SUCCESSION_TITLE,대를 잇다
+SUCCESSION_BODY,"%s의 이야기는 끝났다. 이제 %s이(가) 이름과 금고와 동료들을 이어받는다. 세상은 생각보다 금방 다음 장으로 넘어간다."
+NAMING_TITLE,아이가 태어났다!
+NAMING_BODY,"%s · %s. 이름을 지어 주자."
+NAMING_OK,이 이름으로
+GAMEOVER_TITLE,이야기의 끝
+GAMEOVER_BODY,"%s (%s)
+%d년 %d월, 이어받을 사람 없이 세상을 떠났다.
+명성 %d"
+GAMEOVER_REPORT,"길드 장부: 소속 용병 1명 감소. 의뢰 수행에 지장 없음."
+FAMILY_TITLE,가족과 맹우
+FAMILY_SPOUSE,배우자: %s
+FAMILY_LOVER,연인: %s
+FAMILY_CHILD,"자녀: %s (%d세 · %s · %s)"
+FAMILY_MINOR,미성년
+FAMILY_ADULT_TAG,성인
+FAMILY_SWORN,맹우: %s
+FAMILY_NONE,"아직 아무도 없다. 친밀도가 높은 사람에게 고백하거나 맹세할 수 있다."
+FAMILY_HEIR,후계자: %s
+FAMILY_NO_HEIR,없음 (주인공이 죽으면 게임 오버)
+FAMILY_NPC_MARRIED,%s와(과) %s이(가) 혼인했다.
+CREATE_PORTRAIT,초상화 (임시 그림)
+FOUND_TITLE,건국
+FOUND_NAME_LABEL,나라 이름
+FOUND_COLOR_LABEL,깃발 색
+FOUND_CONFIRM,이 이름으로 나라를 세운다
+FOUND_DEFAULT_NAME,%s 왕국
+FOUND_INDEPENDENCE_BTN,"독립 선언
+행동력 %d"
+FOUND_INDEPENDENCE_BODY,"%s을(를) 들고 %s에서 독립한다.
+원 소속국과는 곧바로 전쟁. 나머지 나라는 잠시 지켜볼 것이다. 친한 동료 장수 몇은 따라올지도 모른다."
+FOUND_CONQUEST_BODY,"%s을(를) 빼앗았다. %s의 깃발이 내려갔다.
+이제 이 도시에 걸 깃발을 정할 차례다."
+FOUND_INDEPENDENCE,%s 건국. %s와(과)의 전쟁이 시작되었다.
+FOUND_DONE,%s의 깃발이 %s에 올랐다. 국고 장부도 새로 펼쳤다. 첫 장부터 적자 걱정이다.
+FOUND_JOINED,%s이(가) %s에 합류했다.
+FOUND_FAIL_ALREADY_RULER,이미 군주다.
+FOUND_FAIL_RANK,성주 이상이어야 독립할 수 있다.
+FOUND_FAIL_VASSAL,나라에 몸담은 신하는 용병단 점령전을 벌일 수 없다. 독립 선언을 하자.
+CONQUEST_SECTION,용병단 점령전
+CONQUEST_HINT,용병단만으로 이웃 도시를 공성한다. 정규군 지원은 없다. 이기면 그 도시로 나라를 세우고, 지면 그 나라에 원한만 남는다.
+CONQUEST_BTN,"점령전 → %s (%s)
+행동력 %d"
+CONQUEST_START,%s 성문 앞에 용병단 깃발이 섰다.
+CONQUEST_WON,%s 함락. 성 안 창고 열쇠가 우리 손에 들어왔다.
+CONQUEST_LOST,점령 실패. %s 평판 -%d · 명성 -%d. 길드 술집에서 한동안 안주거리가 될 것이다.
+CONQUEST_FAIL_COMPANY,용병단을 거느린 용병대장만 점령전을 벌일 수 있다.
+CONQUEST_FAIL_TARGET,맞닿은 나라 도시만 칠 수 있다.
+MENU_RETIRE,은퇴한다 (엔딩)
+MENU_RETIRE_CONFIRM,정말 칼을 내려놓는가? (한 번 더 누르면 끝)
+ENDING_UNIFY_TITLE,대륙 통일
+ENDING_RETIRE_TITLE,은퇴
+ENDING_WHO,"%s (%s)
+%d년 %d월"
+ENDING_STAT_TIME,활동 기간: %d년 %d개월
+ENDING_STAT_FAME,명성: %d
+ENDING_STAT_GOLD,남은 금: %s
+ENDING_STAT_COMPANIONS,곁에 남은 동료: %d명
+ENDING_STAT_CHILDREN,자녀: %d명
+ENDING_STAT_NATION,나라: %s (도시 %d곳)
+ENDING_UNIFY_1,대륙의 모든 성에 같은 깃발이 걸렸다. 사관들은 역사서 첫 줄을 무엇으로 쓸지 사흘째 다투고 있다.
+ENDING_UNIFY_2,"전쟁이 끝나자 용병 길드는 조용히 간판을 바꿔 달았다. '경비·호위·잡무 일체'."
+ENDING_UNIFY_3,옛 동료들은 각자 영지를 받아 떠났다. 술자리에서는 여전히 첫 의뢰 이야기만 한다.
+ENDING_UNIFY_ALONE,옥좌는 생각보다 넓었고, 옆자리는 생각보다 비어 있었다.
+ENDING_RETIRE_RULER,왕관은 다음 사람에게 넘어갔다. 국고 장부도 함께. 받은 쪽 표정이 썩 밝지는 않았다.
+ENDING_RETIRE_VASSAL,사직서는 하루 만에 수리되었다. 후임은 이미 정해져 있었던 모양이다.
+ENDING_RETIRE_MERC,"길드 장부에 한 줄이 추가되었다. '소속 용병 1명 은퇴. 미수금 정산 완료.'"
+ENDING_RETIRE_FREE,특별히 그만둘 것도 없었으므로, 그냥 그날부터 일을 하지 않았다.
+ENDING_RICH,모아 둔 금으로 남쪽 바닷가에 집을 샀다. 이웃들은 왜 저 사람이 밤마다 문을 두 번씩 잠그는지 궁금해한다.
+ENDING_POOR,가진 것은 낡은 칼 한 자루뿐이었다. 그것도 결국 전당포에 맡겼다.
+ENDING_FAMILY,아이들은 아버지·어머니의 무용담을 반쯤만 믿는다. 나머지 반은 술집에서 들은 이야기와 다르기 때문이다.
+ENDING_MARRIED,배우자와 함께 조용한 마을에 자리를 잡았다. 싸움 이야기는 이제 집 안에서 금지다.
+ENDING_SINGLE,혼자 사는 집 벽에는 이름 모를 부대의 깃발이 하나 걸려 있다.
+ENDING_FAMOUS,음유시인들은 아직도 그 이름을 노래한다. 가사는 해마다 조금씩 과장된다.
+ENDING_FORGOTTEN,몇 해 지나자 그 이름을 기억하는 사람은 길드 장부 담당자 하나뿐이었다.
+NEGO_TITLE,설전 %d / %d
+NEGO_KIND_RECRUIT,설득: 동료로 맞아들이고 싶다. 말로 해 보자.
+NEGO_KIND_CONTRACT,계약 보수 교섭: 잘하면 보수가 오르고(최대 150%) 못하면 깎인다(최저 75%).
+NEGO_KIND_TRUCE,휴전 교섭: 칼을 잠시 내려놓자고 상대 군주를 설득한다.
+NEGO_GAUGE,설득 %d / %d
+NEGO_LOGIC,"논리
+(지력 %d)"
+NEGO_EMOTION,"감정
+(매력 %d)"
+NEGO_PRESTIGE,"위세
+(명성·신분 %d)"
+NEGO_HINT_LOGIC,%s은(는) 손익을 따지는 눈치다.
+NEGO_HINT_EMOTION,%s은(는) 옛정과 의리에 마음이 약한 눈치다.
+NEGO_HINT_PRESTIGE,%s은(는) 누가 더 센지 살피는 눈치다.
+NEGO_SAID_LOGIC,"""숫자로 말씀드리죠."""
+NEGO_SAID_EMOTION,"""우리가 함께 지나온 길을 생각해 보시오."""
+NEGO_SAID_PRESTIGE,"""내가 누군지는 알고 계실 텐데."""
+NEGO_REACT_OPEN,상대가 고개를 끄덕인다. 설득 +%d
+NEGO_REACT_NEUTRAL,상대가 말없이 듣는다. 설득 +%d
+NEGO_REACT_CLOSED,상대 표정이 굳었다. 설득 +%d
+NEGO_WIN,설득 성공
+NEGO_LOSE,설득 실패
+NEGO_CONTRACT_END,교섭 끝: 보수 %d%%
+NEGO_OK,확인
+NEGO_BTN_RECRUIT,설득
+NEGO_BTN_CONTRACT,교섭
+NEGO_BTN_TRUCE,"휴전 교섭 → %s
+행동력 %d"
+NEGO_RECRUIT_OK,%s이(가) 동료가 되었다. 말 몇 마디로 사람을 얻었다.
+NEGO_RECRUIT_FAIL,%s은(는) 끝내 고개를 젓는다. 사이가 조금 서먹해졌다.
+NEGO_CONTRACT_DONE,%s 계약 보수 교섭: %d%% → 월 %s금.
+NEGO_TRUCE_OK,%s와(과) 휴전. %d개월 동안 칼을 거둔다.
+NEGO_TRUCE_FAIL,%s 군주는 휴전 제안을 웃어넘겼다.
+NEGO_FAIL_TRIED,이번 달엔 이미 말을 꺼내 봤다.
+NEGO_FAIL_NOBODY,말을 나눌 상대가 없다.
+NEGO_FAIL_NOT_RULER,군주만 휴전을 교섭할 수 있다.
+NEGO_FAIL_NOT_AT_WAR,전쟁 중인 나라가 아니다.
+NAME_CLEAR,모두 지우기
+NAME_TOO_LONG,이름은 %d글자까지
+MENU_DISPLAY,화면 설정 (글씨)
+MENU_FONT_CLEAR,선명한 글씨
+MENU_FONT_PIXEL,도트 글씨
+MENU_SIZE_NORMAL,보통
+MENU_SIZE_LARGE,크게
+MENU_SIZE_XLARGE,아주 크게
+MAP_INFO_MORE,자세히 ▶
+MAP_INFO_BACK,◀ 요약
+MAP_OVERVIEW,대륙 전도
+MAP_OVERVIEW_BACK,내 주변
+BATTLE_TURN_LINE,%d턴 · %s · 금 %s
+BATTLE_MODE_SIEGE_ATTACK,공성전 · 성을 친다
+BATTLE_MODE_SIEGE_DEFEND,공성전 · 성을 지킨다
+SKILL_LEVEL_UP,%s Lv%d!
+SKILL_CARD_LINE,%s Lv%d (사용 %d/%d)
+SKILL_CARD_MAX,%s Lv%d (최고)
+SKILL_LEARNED,%s이(가) %s에게서 %s의 요령을 배웠다. (Lv%d)
+GRADE_LABEL,%d급 용병
+GRADE_UP,길드 장부 갱신: %d급 용병으로 승급. 보수 +%d%%. 술집에서 알아보는 사람이 늘었다.
+GRADE_STATUS,%d급 용병 (길드 공적 %d / 다음 %d)
+GRADE_STATUS_MAX,%d급 용병 (길드 공적 %d) · 더 오를 곳이 없다
+GRADE_PERKS,등급 덕분에 의뢰 보수·계약 월급 +%d%%. 재야 영입과 설전의 위세도 등급만큼 유리하다.
+DUEL_CMD_THRUST,찌르기
+DUEL_CMD_SLASH,베기
+DUEL_CMD_BASH,치기
+DUEL_CMD_DODGE,회피
+DUEL_CMD_GUARD,방어
+DUEL_CMD_NONE,빈틈
+DUEL_CMD_FLASH,일섬
+DUEL_CMD_READ,간파
+DUEL_CMD_FOCUS,기합
+DUEL_CMD_SPELL,마검
+DUEL_SP_COST,기력 %d
+DUEL_SPECIALS,필살기: %s
+DUEL_UNDO,하나 지우기
+DUEL_CONFIRM,확정 (%d/3)
+DUEL_POOL,※ 충돌 누적 +%d — 다음에 맞는 쪽이 받는다
+DUEL_RULE_LINE,찌르기 › 베기 › 치기 › 찌르기 · 같은 계통은 충돌
+DUEL_STUNNED_SLOT,빈틈!
+DUEL_HINT_LINE,기색: %d번째 수는 %s 같다.
+DUEL_KIND_ATTACK,공격
+DUEL_KIND_GUARD,몸을 사리는 수
+DUEL_KIND_SPECIAL,필살기
+DUEL_NEXT_TURN,%d턴. 쓴 수만큼 손에 새 수가 들어왔다.
+DUEL_EV_CLASH,챙! 같은 수끼리 부딪쳤다. (충돌 누적 %d)
+DUEL_EV_COUNTER,%s이(가) 수를 읽고 받아쳤다!
+DUEL_EV_OPENING,%s이(가) 흘려 냈다. %s에게 빈틈!
+DUEL_EV_FOCUS,%s이(가) 숨을 고르며 기합을 넣었다.
+DUEL_EV_POOL,쌓인 충격이 한꺼번에 터졌다!
+DUEL_EV_TRADE,서로 한 대씩 주고받았다!
+DUEL_EV_HIT,%s의 일격이 %s에게 들어갔다!
+DUEL_EV_NOTHING,서로 노려보기만 했다.
+DUEL_DRAW,무승부
+DUEL_RESULT_DRAW,"결투: %s와(과) %s, 승부가 나지 않았다. 양쪽 부대가 웅성거린다."
+DUEL_TAVERN_DRAW,승부가 나지 않았다. 서로 술 한 잔씩 사기로 했다.
+DUEL_FAIL_FULL,세 수를 다 골랐다.
+DUEL_FAIL_LOCKED,아직 익히지 못한 필살기다.
+DUEL_FAIL_ONCE,필살기는 한 턴에 한 번.
+DUEL_FAIL_SP,기력이 모자라다.
+DUEL_FAIL_HAND,그 수는 이번 턴에 다 썼다.
+DUEL_AI_CHALLENGE_1,거기 너! 나와 겨뤄 보자!
+DUEL_AI_CHALLENGE_2,군사들 뒤에 숨을 셈인가? 칼을 뽑아라.
+DUEL_AI_CHALLENGE_3,네 목은 내가 가져가겠다. 일대일로!
+DUEL_AI_ASK,%s이(가) %s에게 결투를 걸어 왔다. 거절하면 부대 사기 -%d.
+DUEL_ACCEPT,받아들인다
+DUEL_DECLINE,거절한다
+DUEL_DECLINED,%s 부대가 결투를 피했다. 병사들이 수군거린다.
+DUEL_HELP_TITLE,결투 규칙
+DUEL_HELP_BODY,"한 턴에 세 수를 미리 정하고, 양쪽 수를 동시에 하나씩 공개한다. 최대 5턴.
+· 찌르기 › 베기 › 치기 › 찌르기: 이긴 쪽만 때린다.
+· 같은 계통끼리는 충돌. 피해 없이 '충돌 누적'이 쌓이고, 다음에 맞는 쪽이 한꺼번에 받는다.
+· 회피: 찌르기·베기를 흘리고 상대에게 빈틈(다음 수 무효)을 만든다. 하지만 치기에는 더 세게 맞는다.
+· 방어: 언제든 쓸 수 있다. 피해를 크게 줄인다. 치기는 덜 막힌다.
+· 공격·회피는 손에 든 횟수만큼만. 쓴 만큼 턴이 끝나면 무작위로 다시 채워진다.
+· 필살기 (기력 소모, 한 턴에 한 번): 일섬 = 모든 공격을 이기는 큰 베기 / 간파 = 상대 공격을 받아친다 / 기합 = 체력·기력 회복, 빈틈 해소 / 마검 = 방어·회피를 무시.
+· 기색: 지력이 상대보다 높을수록 정확하다. 틀릴 수도 있다."

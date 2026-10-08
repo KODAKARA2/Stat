@@ -1,0 +1,117 @@
+{
+  "_comment": "모든 [가안] 수치 모음. 코드에 숫자를 박지 않고 여기서 조정한다.",
+  "time": {
+    "start_year": 1,
+    "start_month": 3,
+    "target_years": 20
+  },
+  "ap": {
+    "_comment": "매월 행동력 = base + 신분 보너스(ranks.json의 ap_bonus). 남은 행동력은 이월되지 않음.",
+    "base": 3
+  },
+  "stats": {
+    "min": 1,
+    "max": 100,
+    "keys": ["lead", "str", "int", "mag", "pol", "cha"]
+  },
+  "energy": {
+    "_comment": "기력 0~100. 매월 초 회복, 수행·이동에 소모, 휴식으로 크게 회복.",
+    "max": 100,
+    "start": 100,
+    "monthly_regen": 20
+  },
+  "create": {
+    "_comment": "캐릭터 생성. 출신 배경 기본치 + 보너스 포인트 + 종족 보정. 잠재치 = 생성 직후 능력 + potential_headroom.",
+    "bonus_points": 10,
+    "max_per_stat_bonus": 10,
+    "potential_headroom": 25,
+    "start_rank": "merc_rookie"
+  },
+  "officer": {
+    "_comment": "data/officers.json에 potential이 없으면 능력 + 이 값을 잠재치로 쓴다.",
+    "default_potential_headroom": 12
+  },
+  "actions": {
+    "move": {"ap": 1, "energy": 5},
+    "visit": {"ap": 1, "affinity_min": 2, "affinity_max": 5, "cha_divisor": 30},
+    "interact": {"ap": 1, "gold": 30, "affinity_min": 7, "affinity_max": 12, "cha_divisor": 20},
+    "train": {"ap": 1, "energy": 15, "exp_min": 20, "exp_max": 32},
+    "rest": {"ap": 1, "energy": 40, "injury_heal": 1},
+    "accept_quest": {"ap": 0},
+    "subjugate": {"ap": 1},
+    "hire": {"ap": 0},
+    "recruit": {"ap": 1},
+    "hire_officer": {"ap": 0},
+    "dismiss": {"ap": 0},
+    "form_company": {"ap": 0},
+    "serve": {"ap": 1},
+    "tavern": {"ap": 1},
+    "govern": {"ap": 1},
+    "launch_war": {"ap": 2},
+    "buy": {"ap": 0},
+    "confess": {"ap": 1},
+    "propose": {"ap": 1},
+    "swear": {"ap": 1},
+    "declare_independence": {"ap": 1},
+    "negotiate": {"ap": 1}
+  },
+  "progression": {
+    "_comment": "능력 1 올리는 데 필요한 경험치 = exp_base + 현재 능력 × exp_per_stat. 인간은 exp_bonus_10 특성으로 +10%.",
+    "exp_base": 40,
+    "exp_per_stat": 1.0
+  },
+  "shop": {
+    "sell_ratio": 0.5,
+    "halfling_discount": 0.2
+  },
+  "affinity": {
+    "min": -100,
+    "max": 100
+  },
+  "battle": {
+    "grid_width": 7,
+    "grid_height": 10,
+    "damage": {
+      "_formula": "병력 × troop_factor × (공격능력 + stat_offset) / (방어측 통솔 + stat_offset) × 상성 × 지형 × 난수",
+      "troop_factor": 0.15,
+      "stat_offset": 50,
+      "random_min": 0.9,
+      "random_max": 1.1
+    },
+    "counter_ratio": 0.5,
+    "morale": {
+      "_comment": "사기 0~100. 사기 1당 주는 피해 1%: 주는 피해 × (min_mult + (1 - min_mult) × 사기/100), min_mult 0이면 사기 0 = 피해 0. 피해를 입으면 (잃은 병력 / 최대 병력 × loss_scale)만큼, 같은 편이 궤멸하면 ally_down만큼 떨어지고, 적을 궤멸시키면 kill_bonus만큼 오른다.",
+      "min_mult": 0.0,
+      "taken_per_point": 0.01,
+      "bonus_cost_per_troop": 0.1,
+      "bonus_min_cost": 10,
+      "bonus_steps": [20, 10],
+      "_bonus": "포상: 전투 중 주인공의 금으로 아군 부대 하나의 사기를 올린다. 같은 부대에 한 전투에서 n번째 주는 포상은 bonus_steps[n-1]만큼(1번째 +20, 2번째 +10). 그 뒤로는 돈만 받고 사기는 안 오른다. 비용 = 병력 × bonus_cost_per_troop (최소 bonus_min_cost). 행동은 쓰지 않는다.",
+      "_taken": "사기가 100에서 1 떨어질 때마다 받는 피해 +taken_per_point (사기 0이면 받는 피해 2배)",
+      "_loss": "맞을 때 사기 하락 = hit_base + max(0, 때린 쪽 사기 - 맞은 쪽 사기) × gap_factor + 잃은 병력 비율 × loss_scale. 기획 2026-10-08.",
+      "hit_base": 1,
+      "gap_factor": 1.0,
+      "loss_scale": 60,
+      "ally_down": 10,
+      "kill_bonus": 10
+    },
+    "_counter": "근접 공격을 받은 근접 부대는 counter_ratio 만큼 반격(전법 돌격은 반격 없음)",
+    "defeat_death_chance": 0.10,
+    "defeat_injury_months": 2,
+    "troops_base": 200,
+    "troops_per_lead": 4,
+    "_troops": "장수 부대 최대 병력 = troops_base + 통솔 × troops_per_lead. 매월 초 최대 병력의 troop_regen 비율만큼 보충(임시: 무료)",
+    "troop_regen": 0.25
+  },
+  "balance_of_power": {
+    "weak_ratio": 0.5,
+    "strong_ratio": 1.8
+  },
+  "skill_leveling": {
+    "_comment": "전법 레벨 1~3 (기획 2026-10-08). 주인공·자녀는 1에서 시작. 데이터 장수·범용 장수는 key_stat 능력치가 npc_stat[0] 이상이면 2, npc_stat[1] 이상이면 3. 해금 ① 사용 횟수 uses[레벨] 이상 (누적) ② 매월 초, 친밀도 mentor_affinity 이상인 아는 사이 중 같은 전법을 더 높은 레벨로 가진 사람이 있으면 한 단계 (스승 레벨까지).",
+    "max_level": 3,
+    "uses": {"2": 6, "3": 18},
+    "mentor_affinity": 70,
+    "npc_stat": [70, 85]
+  }
+}

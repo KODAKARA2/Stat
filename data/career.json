@@ -1,0 +1,147 @@
+{
+  "_comment": "M5 출세 [가안]. 동료·고용·술집·투신·평정·통치·전쟁 계약·결투 수치. 모두 여기서 조정.",
+  "companion": {
+    "_comment": "동료 영입 성공률 = base + (친밀도 - affinity_floor) × per_affinity + 매력 × per_cha + 명성 × per_fame (min~max). 월급 = wage_base + 능력치 합 / wage_divisor. 못 주면 친밀도 unpaid_affinity, 친밀도가 0 아래로 내려가면 떠난다.",
+    "base": 0.3,
+    "affinity_floor": 20,
+    "per_affinity": 0.01,
+    "per_cha": 0.003,
+    "per_fame": 0.002,
+    "min": 0.05,
+    "max": 0.95,
+    "wage_base": 10,
+    "wage_divisor": 25,
+    "unpaid_affinity": -10,
+    "join_affinity": 10
+  },
+  "hire_officer": {
+    "_comment": "무명 무장 고용: 금을 내면 어떤 사람이 올지 모르는 범용 장수 한 명이 동료로 들어온다.",
+    "cost": 120
+  },
+  "tavern": {
+    "_comment": "술집(행동력 1, 술값 drink_cost): 소문 / 재야 발견 / 시비(결투) / 그냥 한잔. 확률 합 1.",
+    "drink_cost": 5,
+    "rumor": 0.4,
+    "discover": 0.3,
+    "brawl": 0.15,
+    "brawl_fame": 3
+  },
+  "serve": {
+    "_comment": "투신: 그 나라 도시에서, 그 나라 평판 min_reputation 이상 또는 명성 min_fame 이상. 수락 확률 = base + 평판 × per_rep + 명성 × per_fame.",
+    "min_rank_order": 2,
+    "min_reputation": 5,
+    "min_fame": 40,
+    "base": 0.5,
+    "per_rep": 0.02,
+    "per_fame": 0.005
+  },
+  "merit": {
+    "_comment": "공적: 평정 임무 완수, 자기 나라를 위한 전투 승리, 자기 나라 도시의 토벌.",
+    "war_win": 8,
+    "own_subjugate": 2,
+    "mission_fail": -2
+  },
+  "missions": {
+    "_comment": "매월 초 평정에서 받는 임무. war = 그 달 우리 나라 출정에 참전 / subjugate = 우리 나라 도시에서 토벌 / train = 수행 need번 / develop = (성주) 통치 행동 need번.",
+    "war_merit": 15,
+    "subjugate_merit": 5,
+    "train_need": 2,
+    "train_merit": 3,
+    "develop_need": 1,
+    "develop_merit": 5
+  },
+  "govern": {
+    "_comment": "성주 통치(행동력 1, 나라 국고에서 비용): 상업·농업 개발은 정치에 비례, 방어 강화, 징병(병사 1명 = 금 1). 출진은 행동력 2.",
+    "develop_cost": 50,
+    "develop_base": 1,
+    "develop_per_pol": 0.04,
+    "defense_cost": 80,
+    "defense_gain": 4,
+    "conscript_max": 400,
+    "conscript_cost_per_troop": 1.0,
+    "launch_ap": 2,
+    "launch_send_ratio": 0.7
+  },
+  "contract": {
+    "_comment": "용병단 전쟁 계약: 전쟁 중인 나라가 매월 offer_chance × hire_rate 확률로 계약을 건다. 월 보수 = pay_base × (1 + 명성 × pay_per_fame). 위약금 = 남은 개월 × 월 보수. 배신하면 원 고용국 평판 betray_rep, 명성 betray_fame.",
+    "offer_chance": 0.5,
+    "months_min": 1,
+    "months_max": 3,
+    "pay_base": 150,
+    "pay_per_fame": 0.005,
+    "win_bonus": 80,
+    "complete_rep": 10,
+    "betray_rep": -25,
+    "betray_fame": -10
+  },
+  "duel": {
+    "_comment": "결투 (GDD §6.1, 2026-10-08 3수 예약형). 체력 = hp_base + 무력 × hp_per_str, 한 번의 피해 = (dmg_base + 무력 × dmg_per_str) × 배율 × (1 ± dmg_random). 최대 turns턴, 턴마다 3수. 같은 계통 충돌은 clash_add씩 쌓여(최대 clash_cap) 다음에 맞는 쪽이 받는다. 공격·회피 횟수는 hand_start에서 시작해 쓴 만큼 무작위 보충(hand_cap까지). 기력은 턴마다 sp_regen_turn. 끝났을 때 체력 비율 차이가 draw_margin 미만이면 무승부.",
+    "turns": 5,
+    "hp_base": 60,
+    "hp_per_str": 0.6,
+    "dmg_base": 10,
+    "dmg_per_str": 0.25,
+    "dmg_random": 0.12,
+    "sp_start": 30,
+    "sp_regen_turn": 10,
+    "sp_max": 100,
+    "hand_start": {"thrust": 2, "slash": 2, "bash": 2, "dodge": 1},
+    "hand_cap": {"thrust": 3, "slash": 3, "bash": 3, "dodge": 2},
+    "clash_add": 8,
+    "clash_cap": 40,
+    "draw_margin": 0.05,
+    "mult": {"vs_guard": 0.35, "bash_vs_guard": 0.6, "bash_vs_dodge": 1.2, "vs_none": 1.25, "vs_focus": 1.3, "flash": 2.0, "read_counter": 1.3, "spell": 1.4},
+    "special_cost": {"flash": 30, "read": 20, "focus": 0, "spell": 30},
+    "special_unlock": {
+      "_comment": "필살기 해금: stat 능력치가 min 이상이거나 skills 중 하나를 가졌으면",
+      "flash": {"stat": "str", "min": 80, "skills": ["charge"]},
+      "read":  {"stat": "int", "min": 70, "skills": []},
+      "focus": {"stat": "lead", "min": 70, "skills": ["fortify"]},
+      "spell": {"stat": "mag", "min": 60, "skills": ["fire"]}
+    },
+    "focus_heal": 0.1,
+    "focus_sp": 25,
+    "hint_base": 0.5,
+    "hint_per_int": 0.01,
+    "hint_min": 0.25,
+    "hint_max": 0.85,
+    "ai_samples": 16,
+    "ai_challenge_base": 0.08,
+    "exp_win": 20,
+    "exp_lose": 8,
+    "loser_morale": -40,
+    "winner_morale": 20,
+    "draw_morale": -5,
+    "battle_win_fame": 2,
+    "loser_death_chance": 0.05,
+    "refuse_morale": -10,
+    "tavern_win_fame": 3,
+    "tavern_lose_gold": 10
+  },
+  "founding": {
+    "_comment": "건국: 새 나라 국고 = start_gold + 주인공 금 × gold_transfer (그만큼 주인공 금은 줄어든다). 원 소속국 무장 중 친밀도 join_affinity 이상은 합류. 다른 나라와는 start_truce개월 휴전으로 시작. 용병단 점령전은 행동력 conquest_ap.",
+    "start_gold": 500,
+    "gold_transfer": 0.5,
+    "start_food": 3000,
+    "start_security": 50,
+    "join_affinity": 50,
+    "start_truce": 6,
+    "conquest_ap": 2,
+    "conquest_fail_rep": -20,
+    "conquest_fail_fame": -5,
+    "conquest_troops_left": 0.3
+  },
+  "negotiation": {
+    "_comment": "설전: 라운드 rounds(+정치 extra_round_pol/pol2 이상이면 1씩). 게이지 시작 start_gauge + 친밀도×start_per_affinity. 한 수 = (base_power + 능력×power_per_stat) × (내 능력+50)/(상대 능력+50) × 마음가짐 배율 × 0.85~1.15. 열린 쪽 open_mult, 질색 closed_mult. 눈치 정확도 hint_base + 지력×hint_per_int (최대 hint_max). 위세 = 명성×prestige_per_fame + 신분order×prestige_per_rank. 계약 보수 배율 pay_mult_min~max (게이지/목표).",
+    "rounds": 3, "extra_round_pol": 60, "extra_round_pol2": 80,
+    "start_gauge": 20, "start_per_affinity": 0.2, "start_max": 60,
+    "goal": {"recruit": 100, "contract": 100, "truce": 120},
+    "base_power": 15, "power_per_stat": 0.2, "open_mult": 1.5, "closed_mult": 0.3, "weight_floor": 10,
+    "hint_base": 0.35, "hint_per_int": 0.006, "hint_max": 0.95,
+    "prestige_per_fame": 0.3, "prestige_per_rank": 3,
+    "pay_mult_min": 0.75, "pay_mult_max": 1.5, "recruit_fail_affinity": -3
+  },
+  "company": {
+    "_comment": "용병단 결성: 용병대장 + 동료 min_companions명 이상."
+  }
+}

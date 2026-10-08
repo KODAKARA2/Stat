@@ -1,0 +1,149 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ui/map/map_screen.gd" id="1_screen"]
+[ext_resource type="Script" path="res://ui/map/map_view.gd" id="2_view"]
+
+[node name="MapScreen" type="Node2D"]
+script = ExtResource("1_screen")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(360, 575)
+
+[node name="MapView" type="Node2D" parent="."]
+script = ExtResource("2_view")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layout" type="VBoxContainer" parent="UI/HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="PanelContainer" parent="UI/HUD/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/HUD/Layout/TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Date" type="Label" parent="UI/HUD/Layout/TopBar/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="UI/HUD/Layout/TopBar/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.77, 0.36, 1)
+horizontal_alignment = 1
+
+[node name="Middle" type="Control" parent="UI/HUD/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Bottom" type="VBoxContainer" parent="UI/HUD/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="InfoPanel" type="PanelContainer" parent="UI/HUD/Layout/Bottom"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 330)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="UI/HUD/Layout/Bottom/InfoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="Hint" type="Label" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.66, 0.58, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="VBoxContainer" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="CityName" type="Label" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+
+[node name="CitySub" type="Label" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.66, 0.58, 1)
+
+[node name="Stats" type="GridContainer" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="Desc" type="Label" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.86, 0.68, 1)
+autowrap_mode = 3
+
+[node name="CityAction" type="Button" parent="UI/HUD/Layout/Bottom/InfoPanel/Margin/Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="NextMonth" type="Button" parent="UI/HUD/Layout/Bottom"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+
+[node name="Tabs" type="HBoxContainer" parent="UI/HUD/Layout/Bottom"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Toast" type="Label" parent="UI/HUD"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -120.0
+offset_right = -32.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+horizontal_alignment = 1
+autowrap_mode = 3

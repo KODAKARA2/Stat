@@ -1,0 +1,16 @@
+{
+  "_comment": "신분 사다리. order가 클수록 높은 신분. 사관(국가 소속)은 어떤 용병보다도 위 — 용병대장도 신임 성주나 신하에게 얕보인다. [가안] 수치: req_fame(용병 승진에 필요한 명성), req_companions(필요 동료 수), req_merit(사관 승진에 필요한 공적), companion_slots(데리고 다닐 수 있는 동료 수), salary(사관 월급, 나라 국고에서).",
+  "rows": [
+    {"id": "none",          "order": 0,  "track": "free",   "name_key": "RANK_NONE",          "ap_bonus": 0, "companion_slots": 0},
+    {"id": "merc_rookie",   "order": 1,  "track": "merc",   "name_key": "RANK_MERC_ROOKIE",   "ap_bonus": 0, "companion_slots": 1},
+    {"id": "merc_veteran",  "order": 2,  "track": "merc",   "name_key": "RANK_MERC_VETERAN",  "ap_bonus": 0, "companion_slots": 2, "req_fame": 15},
+    {"id": "merc_senior",   "order": 3,  "track": "merc",   "name_key": "RANK_MERC_SENIOR",   "ap_bonus": 0, "companion_slots": 3, "req_fame": 50},
+    {"id": "merc_vice",     "order": 4,  "track": "merc",   "name_key": "RANK_MERC_VICE",     "ap_bonus": 1, "companion_slots": 4, "req_fame": 120, "req_companions": 1},
+    {"id": "merc_captain",  "order": 5,  "track": "merc",   "name_key": "RANK_MERC_CAPTAIN",  "ap_bonus": 1, "companion_slots": 5, "req_fame": 250, "req_companions": 2, "can_form_company": true, "can_war_contract": true},
+    {"id": "vassal_knight", "order": 10, "track": "vassal", "name_key": "RANK_VASSAL_KNIGHT", "ap_bonus": 1, "companion_slots": 3, "salary": 40},
+    {"id": "lord",          "order": 11, "track": "vassal", "name_key": "RANK_LORD",          "ap_bonus": 2, "companion_slots": 5, "salary": 80,  "req_merit": 100},
+    {"id": "general",       "order": 12, "track": "vassal", "name_key": "RANK_GENERAL",       "ap_bonus": 2, "companion_slots": 6, "salary": 120, "req_merit": 350},
+    {"id": "chancellor",    "order": 13, "track": "vassal", "name_key": "RANK_CHANCELLOR",    "ap_bonus": 2, "companion_slots": 6, "salary": 160, "req_merit": 800},
+    {"id": "ruler",         "order": 20, "track": "ruler",  "name_key": "RANK_RULER",         "ap_bonus": 2, "companion_slots": 8}
+  ]
+}

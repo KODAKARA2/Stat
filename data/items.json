@@ -1,0 +1,25 @@
+{
+  "_comment": "상점 물건 [가안] GDD §3.3. slot: weapon(무기)/armor(갑옷)/accessory(장신구)/consumable(소모품). bonus = 능력치 보너스(장비하고 있는 동안). nations가 비어 있으면 어느 나라 상점에나, 있으면 그 나라 도시에서만. capital_only면 수도에서만. 장비를 사면 바로 착용하고, 원래 끼던 건 balance.json shop.sell_ratio 값에 판다. 하플링은 shop.halfling_discount만큼 할인.",
+  "rows": [
+    {"id": "w_old_sword",     "slot": "weapon",    "name_key": "ITEM_OLD_SWORD",     "price": 40,  "bonus": {"str": 3}},
+    {"id": "w_knight_sword",  "slot": "weapon",    "name_key": "ITEM_KNIGHT_SWORD",  "price": 160, "bonus": {"str": 6}},
+    {"id": "w_master_blade",  "slot": "weapon",    "name_key": "ITEM_MASTER_BLADE",  "price": 450, "bonus": {"str": 10, "lead": 2}, "capital_only": true},
+    {"id": "w_hunter_bow",    "slot": "weapon",    "name_key": "ITEM_HUNTER_BOW",    "price": 130, "bonus": {"str": 4, "lead": 2}},
+    {"id": "w_elf_bow",       "slot": "weapon",    "name_key": "ITEM_ELF_BOW",       "price": 380, "bonus": {"str": 7, "lead": 4}, "nations": ["silvaen"]},
+    {"id": "w_staff",         "slot": "weapon",    "name_key": "ITEM_STAFF",         "price": 160, "bonus": {"mag": 6}},
+    {"id": "w_archmage_rod",  "slot": "weapon",    "name_key": "ITEM_ARCHMAGE_ROD",  "price": 480, "bonus": {"mag": 10, "int": 3}, "nations": ["astra"]},
+    {"id": "w_dwarf_axe",     "slot": "weapon",    "name_key": "ITEM_DWARF_AXE",     "price": 420, "bonus": {"str": 9, "lead": 3}, "nations": ["bargum"]},
+    {"id": "a_leather",       "slot": "armor",     "name_key": "ITEM_LEATHER",       "price": 60,  "bonus": {"lead": 3}},
+    {"id": "a_chain",         "slot": "armor",     "name_key": "ITEM_CHAIN",         "price": 190, "bonus": {"lead": 6}},
+    {"id": "a_plate",         "slot": "armor",     "name_key": "ITEM_PLATE",         "price": 480, "bonus": {"lead": 10, "str": 2}, "nations": ["bargum", "leonhart"]},
+    {"id": "a_elf_cloak",     "slot": "armor",     "name_key": "ITEM_ELF_CLOAK",     "price": 170, "bonus": {"mag": 3, "cha": 3}, "nations": ["silvaen", "astra"]},
+    {"id": "x_silver_ring",   "slot": "accessory", "name_key": "ITEM_SILVER_RING",   "price": 120, "bonus": {"cha": 4}},
+    {"id": "x_merchant_seal", "slot": "accessory", "name_key": "ITEM_MERCHANT_SEAL", "price": 260, "bonus": {"pol": 5, "cha": 3}, "nations": ["merka"]},
+    {"id": "x_warhorse",      "slot": "accessory", "name_key": "ITEM_WARHORSE",      "price": 320, "bonus": {"lead": 4, "str": 3}, "nations": ["leonhart", "merka"]},
+    {"id": "x_charm",         "slot": "accessory", "name_key": "ITEM_CHARM",         "price": 140, "bonus": {"int": 4}},
+    {"id": "x_strategy_book", "slot": "accessory", "name_key": "ITEM_STRATEGY_BOOK", "price": 300, "bonus": {"int": 6, "lead": 2}, "capital_only": true},
+    {"id": "c_salve",         "slot": "consumable", "name_key": "ITEM_SALVE",        "price": 50,  "use": {"injury": -1}},
+    {"id": "c_tonic",         "slot": "consumable", "name_key": "ITEM_TONIC",        "price": 40,  "use": {"energy": 40}},
+    {"id": "c_recruits",      "slot": "consumable", "name_key": "ITEM_RECRUITS",     "price": 80,  "use": {"troops": 150}}
+  ]
+}

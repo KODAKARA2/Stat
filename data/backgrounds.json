@@ -1,0 +1,18 @@
+{
+  "_comment": "출신 배경 [가안] GDD §4.1. stats = 기본 능력치(합계 225로 맞춤). connections = 시작부터 아는 사람과 친밀도. perks: extra_hire = 용병 고용 한도 +1, start_hired = 길드 창병대 1부대를 계약한 채 시작.",
+  "rows": [
+    {"id": "knight_bastard",  "name_key": "BG_KNIGHT_BASTARD",  "desc_key": "BG_KNIGHT_BASTARD_DESC",
+     "stats": {"lead": 50, "str": 55, "int": 35, "mag": 10, "pol": 30, "cha": 45}, "skills": ["charge"],   "gold": 100, "unit_type": "cavalry",
+     "connections": [{"officer": "gabriel", "affinity": 15}]},
+    {"id": "merchant_family", "name_key": "BG_MERCHANT_FAMILY", "desc_key": "BG_MERCHANT_FAMILY_DESC",
+     "stats": {"lead": 30, "str": 30, "int": 50, "mag": 10, "pol": 50, "cha": 55}, "skills": ["commerce"], "gold": 300, "unit_type": "infantry",
+     "connections": [{"officer": "lucia", "affinity": 15}],
+     "perks": ["extra_hire", "start_hired"]},
+    {"id": "fallen_mage",     "name_key": "BG_FALLEN_MAGE",     "desc_key": "BG_FALLEN_MAGE_DESC",
+     "stats": {"lead": 30, "str": 20, "int": 55, "mag": 50, "pol": 35, "cha": 35}, "skills": ["fire"],     "gold": 80,  "unit_type": "mage",
+     "connections": [{"officer": "mirabel", "affinity": 15}]},
+    {"id": "mountain_hunter", "name_key": "BG_MOUNTAIN_HUNTER", "desc_key": "BG_MOUNTAIN_HUNTER_DESC",
+     "stats": {"lead": 45, "str": 55, "int": 40, "mag": 10, "pol": 25, "cha": 50}, "skills": ["volley"],   "gold": 60,  "unit_type": "archer",
+     "connections": [{"officer": "rian", "affinity": 15}]}
+  ]
+}
