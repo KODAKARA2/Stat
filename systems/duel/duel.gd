@@ -457,6 +457,7 @@ static func _grow_stats(d: DuelState) -> Array:
 ## 전투 중 결투 결과: 진 부대 사기 크게 하락, 이긴 부대 사기 상승. 진 NPC 장수는 낮은 확률로 전사(부대 붕괴). 무승부는 둘 다 조금.
 static func apply_battle(state: BattleState, a_unit: BattleUnit, b_unit: BattleUnit, d: DuelState) -> Array:
 	var lines: Array = []
+	Record.duel(d)
 	var winner_id: String = d.winner()
 	if winner_id == "":
 		for u: BattleUnit in [a_unit, b_unit]:
@@ -482,6 +483,7 @@ static func apply_battle(state: BattleState, a_unit: BattleUnit, b_unit: BattleU
 ## 술집 시비 결과: 이기면 명성, 지면 술값 덤터기, 비기면 서로 술 한 잔. 시비 건 임시 인물은 사라진다.
 static func apply_tavern(d: DuelState) -> Array:
 	var lines: Array = []
+	Record.duel(d)
 	var me: String = d.a_id
 	match d.winner():
 		me:

@@ -387,6 +387,7 @@ static func betray_if_needed(id: String, side: String) -> String:
 	add_fame(id, int(cfg("contract", "betray_fame", -10)))
 	s["betrayals"] = int(s.get("betrayals", 0)) + 1
 	s["contract"] = {}
+	Record.add(id, "quest_fail")
 	var text: String = msg("CONTRACT_BETRAYED", [Diplomacy.nation_name(c["employer"]), Fmt.num(penalty)])
 	log_line(text)
 	return text
@@ -421,6 +422,7 @@ static func tick_contract(id: String) -> void:
 		var rep: Dictionary = s.get_or_add("reputation", {})
 		rep[c["employer"]] = int(rep.get(c["employer"], 0)) + int(cfg("contract", "complete_rep", 10))
 		s["contract"] = {}
+		Record.add(id, "quest_done")
 		log_line(msg("CONTRACT_DONE", [Diplomacy.nation_name(c["employer"])]))
 
 

@@ -86,6 +86,7 @@ static func expire(officer_id: String) -> Array:
 		if TimeManager.month_index() > int(q["deadline"]):
 			list.erase(q)
 			expired.append(q)
+			Record.add(officer_id, "quest_fail")   # 기한을 넘긴 의뢰는 실패
 	return expired
 
 

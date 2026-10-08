@@ -27,6 +27,7 @@ func _ready() -> void:
 	_test_name_input()
 	_test_skill_levels()
 	_test_grade_and_morale()
+	_test_record()
 	_test_save_load()
 	print("== 결과: 통과 %d, 실패 %d ==" % [_passes, _fails])
 	get_tree().quit(1 if _fails > 0 else 0)
@@ -1123,3 +1124,51 @@ func _test_grade_and_morale() -> void:
 	check(BattleRules.morale_loss(a, d) == 11, "사기 100이 90을 치면 11 하락 (기본 1 + 차이 10)")
 	a.morale = 50
 	check(BattleRules.morale_loss(a, d) == 1, "사기 낮은 쪽이 높은 쪽을 치면 기본 1만")
+
+
+func _test_record() -> void:
+	print("- 이력 (결투 전적 / 의뢰 처리)")
+	WorldSetup.new_game({"name": "시험", "race": "human", "origin": "leonhart", "background": "knight_bastard", "bonus": {}})
+	SaveManager.game_in_progress = false
+	var me: String = GameState.player_id
+	var p: Dictionary = GameState.player()
+	check(Record.duel_line(me) == "결투 0승 0패" and Record.quest_line(me) == "의뢰 0건 완수 / 0건 실패", "처음엔 0승 0패, 0건")
+	# 결투: 전투 중 승리 → 나 1승, 상대 1패
+	var st: BattleState = BattleSetup.from_quest(Guild.make_quest(p["city"]), me)
+	var mine: BattleUnit = st.leader_of("ally")
+	var theirs: BattleUnit = BattleSetup.officer_unit("gabriel", "enemy")
+	st.add_unit(theirs)
+	var d: DuelState = Duel.start(me, "gabriel")
+	d.result = "a"
+	Duel.apply_battle(st, mine, theirs, d)
+	check(Record.count(me, "duel_win") == 1 and Record.count("gabriel", "duel_lose") == 1, "결투 승패가 양쪽에 남는다")
+	var d2: DuelState = Duel.start(me, "gabriel")
+	d2.result = "draw"
+	Duel.apply_battle(st, mine, theirs, d2)
+	check(Record.duel_line(me) == "결투 1승 0패 (무 1)", "무승부도 표시: %s" % Record.duel_line(me))
+	# 술집 시비 상대(임시 인물)는 기록하지 않는다
+	var thug: String = OfficerGen.generate("", p["city"], "none")
+	Officers.get_state(thug)["temporary"] = true
+	var td: DuelState = Duel.start(me, thug)
+	td.result = "b"
+	Duel.apply_tavern(td)
+	check(Record.count(me, "duel_lose") == 1, "술집에서 지면 1패")
+	# 의뢰: 토벌 승리 = 완수, 패배 = 실패, 기한 넘김 = 실패
+	var quest: Dictionary = Guild.make_quest(p["city"])
+	var s1: BattleState = BattleSetup.from_quest(quest, me)
+	s1.result = "win"
+	BattleOutcome.apply(s1)
+	var s2: BattleState = BattleSetup.from_quest(Guild.make_quest(p["city"]), me)
+	s2.result = "lose"
+	BattleOutcome.apply(s2)
+	var late: Dictionary = Guild.make_quest(p["city"])
+	late["deadline"] = TimeManager.month_index() - 1
+	Guild.active_quests(me).append(late)
+	Guild.expire(me)
+	check(Record.count(me, "quest_done") == 1 and Record.count(me, "quest_fail") == 2, "의뢰 1건 완수 / 2건 실패 (%s)" % Record.quest_line(me))
+	var card: Control = OfficerCard.build(me)
+	var texts: PackedStringArray = []
+	for l: Node in card.find_children("*", "Label", true, false):
+		texts.append((l as Label).text)
+	check(" ".join(texts).contains("결투 1승 1패") and " ".join(texts).contains("의뢰 1건 완수 / 2건 실패"), "인물 카드에 이력 두 줄")
+	card.free()

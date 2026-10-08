@@ -23,6 +23,10 @@ static func build(id: String) -> Control:
 	info.add_child(UiKit.label(TranslationServer.translate("CARD_LOCATION") % UiKit.city_name(s.get("city", "")), 24, UiKit.MUTED))
 	var unit_name: String = TranslationServer.translate(DataDB.get_row("unit_types", s.get("unit_type", "infantry")).get("name_key", ""))
 	info.add_child(UiKit.label(TranslationServer.translate("CARD_TROOPS") % [Fmt.num(int(s.get("troops", 0))), Fmt.num(Officers.max_troops(id)), unit_name], 24, UiKit.MUTED))
+	# 이력: 결투 전적과 의뢰 처리
+	info.add_child(UiKit.label(Record.duel_line(id), 24, UiKit.TEXT))
+	if me or Record.count(id, "quest_done") + Record.count(id, "quest_fail") > 0:
+		info.add_child(UiKit.label(Record.quest_line(id), 24, UiKit.TEXT))
 
 	if me:
 		root.add_child(UiKit.label(TranslationServer.translate("CARD_PLAYER_STATUS") % [

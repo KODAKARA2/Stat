@@ -103,6 +103,10 @@ static func apply(state: BattleState) -> Dictionary:
 			Career.add_fame(officer_id, int(Founding.cfg("conquest_fail_fame", -5)))
 			lines.append(msg("CONQUEST_LOST", [Diplomacy.nation_name(quest["enemy"]), -int(Founding.cfg("conquest_fail_rep", -20)), -int(Founding.cfg("conquest_fail_fame", -5))]))
 
+	# 이력: 의뢰 완수 / 실패
+	if quest.get("type", "monster") in ["monster", "war", "conquest"]:
+		Record.add(officer_id, "quest_done" if won else "quest_fail")
+
 	# 용병 등급: 길드 공적
 	var grade_up: String = MercGrade.add_points(officer_id, MercGrade.quest_points(quest, won))
 	if grade_up != "":
