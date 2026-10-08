@@ -7,7 +7,7 @@ Source baseline: `c0aae42c9fe01438567a7fcd2c878f8a3669ea1c`; existing world, off
 1. **P1 — AI recruits the player's companions without release.** `systems/war/personnel.gd` considered every nationless active officer eligible. A companion could simultaneously retain their leader, follow the player, draw companion wages and become an AI country's knight/commander. Use the existing `Career.is_free_agent()` predicate. Regression isolates a companion and a free agent and forces a hire; companion stays, free agent is hired.
 2. **P1 — injured or troopless character can launch a battle through alternate paths.** `systems/actions/launch_war_action.gd` and `systems/founding.gd` checked city/rank/company requirements without the fitness checks used by `SubjugateAction`. Both now reject injury or zero personal troops before AP is spent. Healthy launch remains available and costs two AP.
 
-`tests/gameplay_regression.tscn`: initial two-fix baseline 3 passed / 5 failed (Godot 4.6.3); conquest extension before its fix 9 passed / 2 failed (4.7.2); all implemented fixes 11 passed / 0 failed (4.7.2). The original full suite after first two fixes passed 986 / 0 on 4.6.3. These results are separate from parent integration validation.
+`tests/gameplay_regression.tscn`: final identical 11-check suite on original source with Godot 4.7.2 produced **4 passed / 7 failed**, versus **11 passed / 0 failed** after fixes. Earlier staged evidence: initial two-fix baseline 3 passed / 5 failed (Godot 4.6.3); conquest extension before its fix 9 passed / 2 failed (4.7.2); all implemented fixes 11 passed / 0 failed (4.7.2). The original full suite after first two fixes passed 986 / 0 on 4.6.3. These results are separate from parent integration validation.
 
 ## Remaining priorities, not silently changed
 
@@ -47,3 +47,10 @@ Matching Godot 4.7.2, original detached checkout and working tree, isolated HOME
 - Raw logs and economy probe are in `verification/gameplay/`.
 
 Implementation checkpoint: `d6b2473`. Original automatic tests remain the integration owner's responsibility after all concurrent edits.
+
+
+## Career simulation completed
+
+All eight seeded 240-month campaigns completed before and after with exit code 0: six vassal-route runs and two mercenary-only runs. All vassal runs reached chancellor and both mercenary runs reached captain; no game-over output appeared. Before: lord year 3 month 3–year 4 month 9; chancellor year 12 month 3–year 14 month 12; mercenary captain year 5 month 9/year 6 month 3. After: lord year 3 month 2–year 4 month 9; chancellor year 11 month 3–year 14 month 11; mercenary captain year 6 month 5/year 7 month 2. Outcomes diverge because companion recruitment eligibility and RNG consumption changed; this is not evidence that all progression became faster. No balance values were retuned.
+
+The first concurrent harness used a 180-second subprocess timeout and interrupted career near completion. That infrastructure limit was resolved by rerunning the two full career simulations with a 600-second allowance; both completed normally. Only complete career logs are retained here.
