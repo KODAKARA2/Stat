@@ -3,6 +3,7 @@ extends Node
 
 signal data_loaded(table_count: int)
 signal month_started(year: int, month: int)
+signal month_ready(year: int, month: int)  # 모든 월초 처리 완료, 자동 저장 경계
 signal month_ended(year: int, month: int)
 signal game_saved(slot: String)
 signal game_loaded(slot: String)

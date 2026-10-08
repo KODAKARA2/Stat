@@ -38,7 +38,8 @@ func pick(items: Array) -> Variant:
 
 
 func to_save() -> Dictionary:
-	return {"seed": seed_value, "state": _rng.state}
+	# JSON 숫자는 double이므로 64비트 난수 상태를 문자열로 보존한다. 기존 숫자 저장도 읽는다.
+	return {"seed": str(seed_value), "state": str(_rng.state)}
 
 
 func from_save(data: Dictionary) -> void:
