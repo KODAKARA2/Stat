@@ -14,6 +14,11 @@ func ap_cost(_actor: String, _params: Dictionary) -> int:
 
 
 func check(actor: String, params: Dictionary) -> String:
+	var officer: Dictionary = Officers.get_state(actor)
+	if int(officer.get("injury", 0)) > 0:
+		return "ACT_FAIL_INJURED"
+	if int(officer.get("troops", 0)) <= 0:
+		return "ACT_FAIL_NO_TROOPS"
 	var from: String = Career.governs(actor)
 	if from == "":
 		return "GOVERN_FAIL_NO_CITY"

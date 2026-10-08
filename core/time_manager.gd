@@ -31,6 +31,7 @@ func advance_month() -> void:
 		month = 1
 		year += 1
 	EventBus.month_started.emit(year, month)
+	EventBus.month_ready.emit(year, month)
 
 
 func to_save() -> Dictionary:

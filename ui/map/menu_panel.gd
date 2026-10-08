@@ -67,18 +67,22 @@ func _choice_row(options: Array, current: String, on_pick: Callable) -> HBoxCont
 func _save(slot: String, number: int) -> void:
 	if SaveManager.save_game(slot):
 		toast_requested.emit(tr("MENU_SAVED") % number)
+	else:
+		toast_requested.emit(SaveManager.last_error)
 	refresh()
 
 
 static func slot_text(slot: String, number: int) -> String:
 	var info: Dictionary = SaveManager.peek(slot)
 	if info.is_empty():
-		return TranslationServer.translate("MENU_SLOT_EMPTY") % number
+		if SaveManager.has_save(slot):
+			return "손상된 저장 · 다른 슬롯을 선택해 주세요"
+		return "자동 저장 없음" if slot == SaveManager.AUTO_SLOT else TranslationServer.translate("MENU_SLOT_EMPTY") % number
 	var key: String = "MENU_AUTO_INFO" if slot == SaveManager.AUTO_SLOT else "MENU_SLOT_INFO"
 	var args: Array = [int(info["year"]), int(info["month"]), info["name"], TranslationServer.translate(info["rank_key"])]
 	if slot != SaveManager.AUTO_SLOT:
 		args.push_front(number)
-	return TranslationServer.translate(key) % args
+	return (TranslationServer.translate(key) % args) + (" · 백업 복구" if info.get("backup", false) else "")
 
 
 ## 불러오기 버튼들 (자동 저장 + 수동 슬롯). 비어 있으면 꺼진다. 타이틀 화면에서도 쓴다.
@@ -88,7 +92,9 @@ static func add_load_buttons(box: Container, tree: SceneTree) -> void:
 		var slot: String = slots[i]
 		var b: Button = UiKit.button(slot_text(slot, i), func() -> void:
 			if SaveManager.load_game(slot):
-				tree.change_scene_to_file("res://ui/map/map_screen.tscn"), 80)
+				tree.change_scene_to_file("res://ui/map/map_screen.tscn")
+			else:
+				Modal.open(tree.current_scene, UiKit.label(SaveManager.last_error, 24, UiKit.BAD, true)), 80)
 		b.disabled = not SaveManager.has_save(slot)
 		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		box.add_child(b)

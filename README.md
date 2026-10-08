@@ -19,3 +19,9 @@ godot --headless --path . res://tests/run_tests.tscn
 
 ## 저장소에 없는 것
 - `assets/sprites/portraits/` (예전 임시 초상화, 재배포 금지 에셋). 지금 게임은 쓰지 않는다.
+
+## 안정성·UI 개선 검증 (2026-10-08)
+- [분석·개선 보고 및 남은 과제](verification/IMPROVEMENT_REPORT.md)
+- 사용자 저장을 보호하는 검사: `GODOT=/path/to/godot-4.7.2 tools/verify.sh`
+- 장기 시뮬레이션 포함: `tools/verify.sh --simulations`
+- 웹 빌드는 `godot --headless --path . --export-release Web <출력폴더>/index.html` 후 HTTP 서버로 실행한다.

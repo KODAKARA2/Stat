@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SAVE_VALID_AFTER_20_YEARS seed=11 valid=true
+seed=11 months=240 max_nation_gold=4374 max_nation_food=82703 max_city_troops=11546 negative_states=0
+SAVE_VALID_AFTER_20_YEARS seed=22 valid=true
+seed=22 months=240 max_nation_gold=5674 max_nation_food=131576 max_city_troops=11458 negative_states=0
+SAVE_VALID_AFTER_20_YEARS seed=33 valid=true
+seed=33 months=240 max_nation_gold=2923 max_nation_food=106433 max_city_troops=11707 negative_states=0
+SAVE_VALID_AFTER_20_YEARS seed=44 valid=true
+seed=44 months=240 max_nation_gold=3451 max_nation_food=127868 max_city_troops=10056 negative_states=0
+SAVE_VALID_AFTER_20_YEARS seed=55 valid=true
+seed=55 months=240 max_nation_gold=4931 max_nation_food=93019 max_city_troops=12607 negative_states=0

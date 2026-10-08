@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FAIL JSON round trip preserves RNG stream
+PASS automatic save loads
+FAIL autosave uses new month, not settled old month
+FAIL autosave captures refreshed AP, quests and world state
+FAIL empty JSON rejected
+FAIL failed load leaves current game untouched
+SAVE REGRESSION failures=5

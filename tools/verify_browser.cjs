@@ -1,0 +1,20 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+(async()=>{
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM || '/usr/bin/chromium',headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:450,height:800}});
+page.on('pageerror',e=>console.log('PAGEERROR',String(e)));
+page.on('console',m=>{if(['error','warning'].includes(m.type()))console.log(m.type(),m.text())});
+await page.goto(process.env.STAT_URL || 'http://127.0.0.1:8765/');await page.waitForFunction(()=>!document.querySelector('#status'),{timeout:60000});
+await page.screenshot({path:require('path').join(__dirname,'../verification/web-title.png')});
+await page.mouse.click(225,560);await page.waitForTimeout(1500);
+await page.screenshot({path:require('path').join(__dirname,'../verification/web-create.png')});
+await page.mouse.click(100,105);await page.keyboard.type('Tester');await page.mouse.click(225,760);await page.waitForTimeout(1500);
+await page.screenshot({path:require('path').join(__dirname,'../verification/web-map.png')});
+await page.mouse.click(225,720);await page.waitForTimeout(300);await page.screenshot({path:require('path').join(__dirname,'../verification/web-confirm.png')});
+await page.mouse.click(225,456);await page.waitForTimeout(1800);
+await page.screenshot({path:require('path').join(__dirname,'../verification/web-month-report.png')});
+await page.waitForTimeout(1500);await page.reload();await page.waitForFunction(()=>!document.querySelector('#status'));await page.waitForTimeout(300);
+await page.mouse.click(225,632);await page.waitForTimeout(1200);
+await page.screenshot({path:require('path').join(__dirname,'../verification/web-reloaded-save.png')});
+console.log('WEB BOOT/NEW GAME/MONTH/AUTOSAVE/RELOAD complete; screenshots reviewed separately');await browser.close();
+})();

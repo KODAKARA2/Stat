@@ -14,5 +14,7 @@
 | 장수 초상화 230장 | 기획자 아내분 그림을 화풍 견본으로, Grok(5장)·ChatGPT(225장)로 생성. 기획자가 유료/본인 계정으로 만든 것 | assets/sprites/portraits_ai/ |
 | 병종 5종·몬스터 29종 전투 말판 그림 | Grok grok-imagine-image-2.0 (2026-10-08, $1.40). 원본·스크립트: C:/1/참고그림\대륙_전투_그림 | assets/sprites/units/ |
 
+| 타이틀 대륙 배경 | ChatGPT 내장 ImageGen, 2026-10-08. 인물·문자 없는 신규 배경 | assets/backgrounds/title_continent.png |
+
 이제 게임은 387 임시 초상화를 쓰지 않는다(예전 저장 파일의 범용 장수만 pt_### 를 계속 씀).
 

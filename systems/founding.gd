@@ -32,6 +32,11 @@ static func independence_check(id: String) -> String:
 
 ## 용병단 점령전을 할 수 없으면 사유 키
 static func conquest_check(id: String, target: String) -> String:
+	var officer: Dictionary = Officers.get_state(id)
+	if int(officer.get("injury", 0)) > 0:
+		return "ACT_FAIL_INJURED"
+	if int(officer.get("troops", 0)) <= 0:
+		return "ACT_FAIL_NO_TROOPS"
 	if Career.is_vassal(id):
 		return "FOUND_FAIL_VASSAL"
 	if not Officers.rank_row(id).get("can_form_company", false) or not Career.has_company(id):
