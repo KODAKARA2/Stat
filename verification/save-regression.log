@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS JSON round trip preserves RNG stream
+PASS automatic save loads
+PASS autosave uses new month, not settled old month
+PASS autosave captures refreshed AP, quests and world state
+PASS empty JSON rejected
+PASS failed load leaves current game untouched
+PASS overwrite creates backup
+PASS truncated primary recovers backup
+PASS backup restores previous valid state
+PASS preview identifies recovered backup
+PASS reject malformed future without mutation
+PASS reject malformed month without mutation
+PASS reject malformed year without mutation
+PASS reject malformed shape without mutation
+PASS reject malformed player without mutation
+PASS reject malformed city without mutation
+PASS reject malformed nation without mutation
+PASS reject slot path traversal
+PASS replacement failure is not reported as success
+SAVE REGRESSION failures=0
