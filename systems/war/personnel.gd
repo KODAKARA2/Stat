@@ -58,7 +58,7 @@ static func run_month(n: String) -> Array:
 	var chance: float = float(rcfg("base_chance", 0.35)) + (Officers.stat(ruler, "cha") - 50) * float(rcfg("cha_factor", 0.005)) if ruler != "" else float(rcfg("base_chance", 0.35))
 	for id: String in GameState.officers:
 		var s: Dictionary = GameState.officers[id]
-		if id == GameState.player_id or not Officers.is_active(id) or s.get("nation", "") != "" or not cities.has(s.get("city", "")):
+		if not Career.is_free_agent(id) or not cities.has(s.get("city", "")):
 			continue
 		if RNG.chance(chance):
 			s["nation"] = n
