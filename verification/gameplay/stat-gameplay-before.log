@@ -1,0 +1,8 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+FAIL: AI cannot enlist a player's companion
+FAIL: AI still recruits available free agents
+FAIL: injured lord cannot launch war
+FAIL: rejected launch spends no AP and creates no plan
+FAIL: lord without personal troops cannot launch war
+GAMEPLAY REGRESSION: 3 passed, 5 failed
