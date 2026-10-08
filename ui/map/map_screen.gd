@@ -64,10 +64,12 @@ func _ready() -> void:
 	EventBus.month_started.connect(func(_y: int, _m: int) -> void:
 		_refresh_all()
 		_show_report())
-	_next_month.text = tr("BOOT_NEXT_MONTH")
+	_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_stats.columns = 2 if Settings.scale() >= 1.5 else 4
+	EventBus.save_failed.connect(func(message: String) -> void: _show_toast(message))
 	for big: Control in [_date, _city_name, _next_month]:   # 장면 파일에 적힌 36 → 글씨 크기 설정 반영
-		big.add_theme_font_size_override("font_size", Settings.fs(36))
-	_next_month.pressed.connect(TimeManager.advance_month)
+		big.add_theme_font_size_override("font_size", Settings.fs(28 if big == _next_month else 36))
+	_next_month.pressed.connect(_request_next_month)
 	_city_action.pressed.connect(_on_city_action)
 	# [자세히 ▶] 버튼: 도시 이름 줄 오른쪽 끝
 	var name_row: HBoxContainer = UiKit.hbox(8)
@@ -90,6 +92,7 @@ func _ready() -> void:
 	_build_tabs()
 	_show_city(Officers.get_state(GameState.player_id).get("city", ""))
 	_refresh_all()
+	_show_report()
 	# 레이아웃이 잡힌 다음 프레임에 지도를 맞춘다
 	for arg: String in OS.get_cmdline_user_args():   # 개발용: --city=도시id 로 주인공을 그 도시에 두고 보기
 		if arg.begins_with("--city="):
@@ -97,6 +100,9 @@ func _ready() -> void:
 			_show_city(arg.trim_prefix("--city="))
 	await get_tree().process_frame
 	_focus_player()
+	if SaveManager.recovered_backup:
+		_show_toast("저장 손상이 감지되어 이전 정상 백업을 불러왔습니다.")
+		SaveManager.recovered_backup = false
 	_middle.resized.connect(_focus_player)   # 아래 정보창 높이가 바뀌면 다시 맞춘다
 	for arg: String in OS.get_cmdline_user_args():   # 개발용: --event=이벤트id 로 이벤트 바로 보기
 		if arg.begins_with("--event="):
@@ -191,6 +197,9 @@ func _toggle_overview() -> void:
 func _refresh_all() -> void:
 	_date.text = tr("BOOT_DATE") % [TimeManager.year, TimeManager.month, TimeManager.season_name()]
 	var p: Dictionary = GameState.player()
+	var ap: int = int(p.get("ap", 0))
+	_next_month.text = "다음 달로 · 행동력 %d 남음" % ap if ap > 0 else "다음 달로 · 행동력 회복"
+	_next_month.tooltip_text = "남은 행동력은 이월되지 않습니다. 월급·전쟁·의뢰 기한을 정산하고 다음 달을 시작합니다."
 	var max_ap: int = Officers.max_ap(GameState.player_id)
 	var dots: String = "●".repeat(int(p["ap"])) + "○".repeat(maxi(0, max_ap - int(p["ap"])))
 	_status.text = MercGrade.label(GameState.player_id) + "   " + tr("HUD_STATUS") % [dots, int(p["energy"]), Fmt.num(int(p["gold"]))]
@@ -249,7 +258,10 @@ func _update_city_action(city_id: String) -> void:
 	if city_id == here:
 		_city_action.text = tr("MAP_OPEN_CITY")
 	elif _world.is_adjacent(here, city_id):
+		var reason: String = Actions.can_execute("move", GameState.player_id, {"to": city_id})
 		_city_action.text = tr("ACTION_MOVE") + " " + tr("UI_AP_COST") % Actions.ap_cost("move", GameState.player_id)
+		_city_action.disabled = reason != ""
+		_city_action.tooltip_text = reason
 	else:
 		_city_action.text = tr("MAP_FAR_AWAY") % (_world.path(here, city_id).size() - 1)
 		_city_action.disabled = true
@@ -329,7 +341,7 @@ func _show_toast(text: String) -> void:
 		_toast_tween.kill()
 	_toast.modulate.a = 1.0
 	_toast_tween = create_tween()
-	_toast_tween.tween_interval(1.4)
+	_toast_tween.tween_interval(clampf(text.length() * 0.06, 2.5, 7.0))
 	_toast_tween.tween_property(_toast, "modulate:a", 0.0, 0.4)
 
 
@@ -356,7 +368,6 @@ func _show_report() -> void:
 	var report: Dictionary = GameState.flags.get("report", {})
 	if report.is_empty():
 		return
-	GameState.flags.erase("report")
 	var box: VBoxContainer = UiKit.vbox(6)
 	box.add_child(UiKit.label(tr("REPORT_TITLE") % [int(report["year"]), int(report["month"])], 36, UiKit.GOLD))
 	var scroll: ScrollContainer = ScrollContainer.new()
@@ -385,7 +396,9 @@ func _show_report() -> void:
 		v.add_child(UiKit.label("■ " + tr("REPORT_PLANNED"), 24, UiKit.GOLD))
 		for p: Dictionary in planned:
 			v.add_child(UiKit.label(tr("REPORT_PLAN_LINE") % [Diplomacy.nation_name(p["attacker"]), UiKit.city_name(p["to"]), Diplomacy.nation_name(p["defender"])], 24, UiKit.BAD, true))
-	Modal.open(_hud, box).closed.connect(_check_event, CONNECT_DEFERRED)
+	Modal.open(_hud, box).closed.connect(func() -> void:
+		GameState.flags.erase("report")
+		_check_event.call_deferred())
 
 
 ## 술집 시비 → 결투 창. 끝나면 결과를 알린다.
@@ -482,3 +495,18 @@ func _ask_child_name(child_id: String) -> void:
 		if n != "":
 			Officers.get_state(child_id)["name"] = n
 		_check_event.call_deferred())
+
+
+## 남은 행동력을 실수로 버리지 않도록 월말 결과를 먼저 안내한다.
+func _request_next_month() -> void:
+	var ap: int = int(GameState.player().get("ap", 0))
+	if ap <= 0:
+		TimeManager.advance_month()
+		return
+	var box: VBoxContainer = UiKit.vbox(12)
+	box.add_child(UiKit.label("이번 달을 마칠까요?", 32, UiKit.GOLD))
+	box.add_child(UiKit.label("행동력이 %d 남았습니다. 남은 행동력은 이월되지 않습니다.\n월급·전쟁·의뢰 기한을 정산한 뒤 다음 달 행동력을 회복하고 자동 저장합니다." % ap, 24, UiKit.TEXT, true))
+	var modal: Modal = Modal.open(_hud, box, "UI_CLOSE")
+	box.add_child(UiKit.button("이번 달 마치기", func() -> void:
+		modal.close()
+		TimeManager.advance_month(), 72))

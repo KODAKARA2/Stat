@@ -47,11 +47,13 @@ func _ready() -> void:
 	check(int(GameState.player()["gold"]) == old_gold, "backup restores previous valid state")
 	check(SaveManager.peek("regression_backup").get("backup", false), "preview identifies recovered backup")
 	var good: Dictionary = {"version": 1, "rng": RNG.to_save(), "time": TimeManager.to_save(), "state": GameState.to_save().duplicate(true)}
-	for kind: String in ["future", "month", "shape", "player", "city"]:
+	for kind: String in ["future", "month", "year", "shape", "player", "city", "nation"]:
 		var bad: Dictionary = good.duplicate(true)
 		match kind:
 			"future": bad["version"] = 999
 			"month": bad["time"]["month"] = 13
+			"year": bad["time"]["year"] = 1.5
+			"nation": bad["state"]["nations"]["leonhart"] = {}
 			"shape": bad["state"]["officers"] = []
 			"player": bad["state"]["player_id"] = "missing"
 			"city": bad["state"]["officers"][GameState.player_id]["city"] = "missing"

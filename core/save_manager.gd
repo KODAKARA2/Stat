@@ -76,8 +76,8 @@ func load_game(slot: String) -> bool:
 	return true
 
 func _on_month_ready(_year: int, _month: int) -> void:
-	if game_in_progress:
-		save_game(AUTO_SLOT)
+	if game_in_progress and not save_game(AUTO_SLOT):
+		EventBus.save_failed.emit(last_error)
 
 func _fail(message: String) -> bool:
 	last_error = message
@@ -107,7 +107,7 @@ func _valid_data(data: Dictionary) -> bool:
 	var date: Dictionary = data["time"]
 	if not _number(date.get("year")) or not _number(date.get("month")):
 		return false
-	if date["year"] < 1 or date["month"] < 1 or date["month"] > 12 or float(date["month"]) != floor(float(date["month"])):
+	if float(date["year"]) != floor(float(date["year"])) or date["year"] < 1 or date["month"] < 1 or date["month"] > 12 or float(date["month"]) != floor(float(date["month"])):
 		return false
 	var state: Dictionary = data["state"]
 	for key: String in ["officers", "cities", "nations", "relations", "diplomacy", "flags"]:
@@ -139,6 +139,9 @@ func _valid_data(data: Dictionary) -> bool:
 			if not _number(officer.get(key)):
 				return false
 		if not officer.get("skills") is Array or not officer.get("alive") is bool:
+			return false
+	for nation: Dictionary in state["nations"].values():
+		if not nation.get("alive") is bool or not _number(nation.get("gold")) or not _number(nation.get("food")):
 			return false
 	for city: Dictionary in state["cities"].values():
 		if not city.get("nation") is String or not state["nations"].has(city["nation"]):

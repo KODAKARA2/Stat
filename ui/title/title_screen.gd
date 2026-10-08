@@ -7,13 +7,21 @@ func _ready() -> void:
 	var bg: Panel = Panel.new()
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
+	var art: TextureRect = TextureRect.new()
+	art.texture = load("res://assets/backgrounds/title_continent.png")
+	art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	art.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	art.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	add_child(art)
 
 	var margin: MarginContainer = MarginContainer.new()
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	for side: String in ["left", "right"]:
 		margin.add_theme_constant_override("margin_" + side, 48)
-	margin.add_theme_constant_override("margin_top", 220)
-	margin.add_theme_constant_override("margin_bottom", 96)
+	margin.add_theme_constant_override("margin_top", 96)
+	margin.add_theme_constant_override("margin_bottom", 48)
 	add_child(margin)
 
 	var v: VBoxContainer = UiKit.vbox(16)
@@ -22,6 +30,8 @@ func _ready() -> void:
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(title)
 	var sub: Label = UiKit.label(tr("GAME_SUBTITLE"), 24, UiKit.MUTED)
+	sub.add_theme_color_override("font_color", Color("e8e1c9"))
+	sub.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(sub)
 
@@ -46,3 +56,5 @@ func _ready() -> void:
 func _continue() -> void:
 	if SaveManager.load_game(SaveManager.AUTO_SLOT):
 		get_tree().change_scene_to_file("res://ui/map/map_screen.tscn")
+	else:
+		Modal.open(self, UiKit.label(SaveManager.last_error, 24, UiKit.BAD, true))

@@ -37,10 +37,22 @@ func refresh() -> void:
 	_content.add_child(UiKit.label(UiKit.city_name(city), 36, Color.html(nation.get("color", "#cccccc")).lightened(0.25)))
 	_content.add_child(UiKit.label(tr(row.get("desc_key", "")), 24, UiKit.MUTED, true))
 
+	var goal: PanelContainer = UiKit.panel(Color("263c3b"), 12)
+	var goal_text: VBoxContainer = UiKit.vbox(4)
+	goal.add_child(goal_text)
+	goal_text.add_child(UiKit.label(Career.next_rank_text(player), 22, UiKit.GOLD, true))
+	var tip: String = "길드에서 의뢰를 수주하고 출발하세요. 수주는 행동력을 쓰지 않습니다."
+	if not Guild.active_quests(player).is_empty():
+		tip = "받은 의뢰의 도시·기한을 확인한 뒤 출발하세요."
+	if int(GameState.player().get("ap", 0)) == 0:
+		tip = "이번 달 행동을 마쳤습니다. 아래 [다음 달로]를 눌러 행동력을 회복하세요."
+	goal_text.add_child(UiKit.label(tip, 22, UiKit.TEXT, true))
+	_content.add_child(goal)
+
 	# 내 행동
 	_content.add_child(UiKit.label("■ " + tr("CITY_MY_ACTIONS"), 24, UiKit.GOLD))
 	var actions: GridContainer = GridContainer.new()
-	actions.columns = 3
+	actions.columns = 2 if Settings.scale() >= 1.5 else 3
 	actions.add_theme_constant_override("h_separation", 8)
 	actions.add_theme_constant_override("v_separation", 8)
 	_content.add_child(actions)
@@ -50,6 +62,11 @@ func refresh() -> void:
 	var rest: Button = UiKit.button(_action_text("ACTION_REST", "rest"), _do.bind("rest", {}, ""))
 	var tavern: Button = UiKit.button(_action_text("CITY_TAVERN", "tavern"), _tavern)
 	var shop: Button = UiKit.button(tr("CITY_SHOP") + "\n" + tr("UI_AP_FREE"), _open_shop)
+	for pair: Array in [[rest, "rest"], [tavern, "tavern"]]:
+		var reason: String = Actions.can_execute(pair[1], player)
+		pair[0].disabled = reason != ""
+		pair[0].tooltip_text = reason
+	train.disabled = int(GameState.player().get("ap", 0)) < Actions.ap_cost("train", player)
 	var row_buttons: Array = [train, rest, tavern, shop]
 	if not Career.is_vassal(player) and GameState.city_owner(city) != "" and Officers.rank_order(player) >= int(Career.cfg("serve", "min_rank_order", 2)):
 		row_buttons.append(UiKit.button(_action_text("CITY_SERVE", "serve"), _serve))
@@ -99,7 +116,9 @@ func _build_guild(player: String, city: String) -> void:
 		_content.add_child(UiKit.label(tr("GUILD_MY_QUESTS"), 24, UiKit.MUTED))
 		for q: Dictionary in mine:
 			var go: Button = UiKit.button(tr("GUILD_GO") + "\n" + tr("UI_AP_COST") % Actions.ap_cost("subjugate", player), _start_quest.bind(q["id"]), 88)
-			go.disabled = q["city"] != city
+			var reason: String = Actions.can_execute("subjugate", player, {"quest": q["id"]})
+			go.disabled = reason != ""
+			go.tooltip_text = reason
 			_content.add_child(_quest_row(q, go, true))
 	var board: Array = Guild.city_quests(city)
 	if board.is_empty():
