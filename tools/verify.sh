@@ -10,7 +10,7 @@ export XDG_CACHE_HOME="$verification_home/cache"
 mkdir -p "$XDG_CACHE_HOME"
 "$engine" --version
 "$engine" --headless --editor --path . --import
-for scene in run_tests save_regression gameplay_regression; do
+for scene in run_tests save_regression gameplay_regression succession_regression; do
   "$engine" --headless --path . "res://tests/$scene.tscn" 2>&1 | tee "$verification_home/$scene.log"
   if grep -Eq 'SCRIPT ERROR|ERROR:|^FAIL ' "$verification_home/$scene.log"; then
     exit 1
