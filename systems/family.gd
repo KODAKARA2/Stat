@@ -237,17 +237,30 @@ static func succeed(cause: String) -> void:
 	# 물려받는 것: 금 전부, 명성 일부, 동료(후계자 자신 제외), 고용 부대, 용병단·계약, 평판
 	h["gold"] = int(h.get("gold", 0)) + int(o.get("gold", 0))
 	h["fame"] = int(h.get("fame", 0)) + int(int(o.get("fame", 0)) * float(cfg("death", "fame_inherit", 0.5)))
-	for key: String in ["hired", "company", "contract", "reputation", "quests"]:
-		if o.has(key) and not h.has(key):
-			h[key] = o[key]
+	# 독립 자산 목록은 합친다. 같은 값의 고용 부대도 각각 별개의 부대다.
+	for key: String in ["hired", "quests"]:
+		var inherited: Array = h.get(key, []).duplicate(true)
+		inherited.append_array(o.get(key, []).duplicate(true))
+		h[key] = inherited
+	# 단일 용병단/계약은 기존 후계자 값을 보존한다. 비어 있으면 상속한다.
+	for key: String in ["company", "contract"]:
+		if h.get(key, {}).is_empty() and o.has(key):
+			h[key] = o[key].duplicate(true)
+	var reputation: Dictionary = h.get("reputation", {}).duplicate(true)
+	reputation.merge(o.get("reputation", {}), false)
+	h["reputation"] = reputation
 	h["perks"] = h.get("perks", [])
 	h.erase("leader")
 	var comps: Array = []
-	for c: String in Career.companions(old):
-		if c != heir:
+	for c: String in Career.companions(heir) + Career.companions(old):
+		if c != heir and c != old and not comps.has(c):
 			comps.append(c)
 			Officers.get_state(c)["leader"] = heir
 	h["companions"] = comps
+	# NPC 기본 숙련도는 player_id 전환 뒤 1이 된다. 전환 전에 실제 값을 고정한다.
+	for skill: String in h.get("skills", []):
+		if SkillLevels.is_battle(skill):
+			SkillLevels.set_level(heir, skill, SkillLevels.level(heir, skill))
 	if h.get("rank", "none") == "none":
 		h["rank"] = "merc_rookie"
 	h["ap"] = Officers.max_ap(heir)

@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FAIL: missing: inherited arrays are deep copies
+FAIL: missing: inherited contract is a deep copy
+FAIL: empty: every hired unit preserved, including identical units
+FAIL: empty: active quests preserved
+FAIL: empty: company retained or inherited
+FAIL: empty: nonempty contract retained; empty inherits
+FAIL: empty: reputation fills missing nations without overwriting heir
+FAIL: existing: every hired unit preserved, including identical units
+FAIL: existing: active quests preserved
+FAIL: existing: reputation fills missing nations without overwriting heir
+FAIL: existing: unique active companion union excludes self and dead
+FAIL: implicit NPC level survives player ID change
+FAIL: materialized skill survives save/load
+FAIL: second succession keeps contract and NPC level
+SUCCESSION REGRESSION: 32 passed, 14 failed
